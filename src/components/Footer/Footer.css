@@ -1,0 +1,15 @@
+footer{
+  /*height: 50px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #252422;
+  color: white;
+  padding: 10px 0;
+}
+
+a {
+  color: white;
+  margin-left: 10px;
+}
