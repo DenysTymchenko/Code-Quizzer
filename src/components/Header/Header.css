@@ -8,9 +8,9 @@ header {
     padding: 0 10px;
 }
 
-.wrapper {
+.page-name,
+.logo {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 5px;
 }
