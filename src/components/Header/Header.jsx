@@ -1,24 +1,23 @@
 import React from "react";
-import AlarmOnIcon from '@mui/icons-material/AlarmOn';
-import HomeIcon from '@mui/icons-material/Home';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Typography } from "@mui/material";
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import { Typography, useMediaQuery } from "@mui/material";
+import Nav from "../Nav/Nav";
+import NavMobile from "../Nav/NavMobile";
 import './Header.css'
+// import NavMobile from "../Nav/NavMobile";
+
 
 function Header() {
-  return(
-    <header>
-      <div className="page-name">
-        <HomeIcon />
-        <Typography variant="h5">Home</Typography>
-      </div>
+  const isBigScreen = useMediaQuery('(min-width:625px)');
 
+  return (
+    <header>
       <div className="logo">
-        <AlarmOnIcon />
+        <AccessAlarmIcon />
         <Typography variant="h5">Quiz App</Typography>
       </div>
 
-      <MenuIcon />
+      {isBigScreen ? <Nav /> : <NavMobile />}
     </header>
   )
 }
