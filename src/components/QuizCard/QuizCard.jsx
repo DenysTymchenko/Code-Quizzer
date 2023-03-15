@@ -10,7 +10,15 @@ import {
 } from "@mui/material";
 import QuizModal from "../QuizModal/QuizModal";
 
-const style = {
+const btnStyles = {
+  color: 'white',
+  borderColor: '#F7EC59',
+  "&:hover": {
+    borderColor: '#FEC601',
+  }
+}
+
+const alertStyles = {
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -58,35 +66,24 @@ function QuizCard({ quiz }) {
         <Button
           size="small"
           variant="outlined"
-          sx={{
-            color: 'white',
-            borderColor: '#F7EC59',
-            "&:hover": {
-              borderColor: '#FEC601',
-            }
-          }}
+          sx={btnStyles}
           onClick={handleStart}
         >
           Start
         </Button>
-        {isStarted && <Alert severity="success" sx={style}>Quiz started (Temporary realisation)</Alert>}
 
         <Button
           size="small"
           variant="outlined"
-          sx={{
-            color: 'white',
-            borderColor: '#F7EC59',
-            "&:hover": {
-              borderColor: '#FEC601',
-            }
-          }}
+          sx={btnStyles}
           onClick={handleOpen}
         >
           Learn More
         </Button>
-        <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
       </CardActions>
+
+      {isStarted && <Alert severity="success" sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
+      <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
     </Card>
   );
 }

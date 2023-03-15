@@ -5,6 +5,16 @@ import FactCheckIcon from '@mui/icons-material/FactCheck';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import "./Nav.css"
 
+const btnStyles = {
+  display: 'flex',
+  gap: '10px',
+  color: 'white',
+  borderColor: '#F7EC59',
+  "&:hover": {
+    borderColor: '#FEC601',
+  }
+}
+
 function Nav() {
   const pages = ['Home', 'Quizzes', 'Other'];
   const icons = [<HomeIcon/>, <FactCheckIcon/>, <MoreHorizIcon/>];
@@ -15,15 +25,7 @@ function Nav() {
         <Button
           key={index}
           variant="outlined"
-          sx={{
-            display: 'flex',
-            gap: '10px',
-            color: 'white',
-            borderColor: '#F7EC59',
-            "&:hover": {
-              borderColor: '#FEC601',
-            }
-          }}
+          sx={btnStyles}
         >
           {icons[index]}{page}
         </Button>
