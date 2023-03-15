@@ -13,6 +13,7 @@ function Nav() {
     <nav>
       {pages.map((page, index) => (
         <Button
+          key={index}
           variant="outlined"
           sx={{
             display: 'flex',

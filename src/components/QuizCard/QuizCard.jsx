@@ -16,8 +16,7 @@ const style = {
   zIndex: '9999',
 }
 
-function QuizCard({key, quiz}) {
-
+function QuizCard({ quiz }) {
   const [isStarted, setStart] = useState(false);
   const handleStart = () => setStart(!isStarted); //temporary for open/close alert
 
@@ -26,7 +25,7 @@ function QuizCard({key, quiz}) {
   const handleClose = () => setOpen(false);
 
   return (
-    <Card key={key} sx={{maxWidth: 345, height: 'fit-content'}}>
+    <Card key={quiz.id} sx={{maxWidth: 345, height: 'fit-content'}}>
       <CardMedia
         sx={{height: 300}}
         image={quiz.img}

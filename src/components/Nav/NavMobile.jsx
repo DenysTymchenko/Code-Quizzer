@@ -50,6 +50,7 @@ function NavMobile() {
       >
         {pages.map((page, index) => (
           <MenuItem
+            key={index}
             onClick={handleClose}
             sx={{
               display: 'flex',
