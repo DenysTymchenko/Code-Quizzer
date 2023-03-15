@@ -1,9 +1,9 @@
 import React from "react";
-import "./Nav.css"
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 import HomeIcon from "@mui/icons-material/Home";
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import "./Nav.css"
 
 function Nav() {
   const pages = ['Home', 'Quizzes', 'Other'];

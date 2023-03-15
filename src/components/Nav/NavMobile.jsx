@@ -1,7 +1,9 @@
 import React from "react";
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import {
+  Button,
+  Menu,
+  MenuItem,
+} from '@mui/material';
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import FactCheckIcon from "@mui/icons-material/FactCheck";

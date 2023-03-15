@@ -4,7 +4,6 @@ import { Typography, useMediaQuery } from "@mui/material";
 import Nav from "../Nav/Nav";
 import NavMobile from "../Nav/NavMobile";
 import './Header.css'
-// import NavMobile from "../Nav/NavMobile";
 
 
 function Header() {
