@@ -27,7 +27,7 @@ function QuizCard({ quiz }) {
   const handleClose = () => setOpen(false);
 
   return (
-    <Card key={quiz.id} sx={{maxWidth: 345, height: 'fit-content'}}>
+    <Card sx={{maxWidth: 345, height: 'fit-content'}}>
       <CardMedia
         sx={{height: 300}}
         image={quiz.img}

@@ -67,6 +67,7 @@ function Main() {
         <div className="wrapper">
           {quizzes.map(quiz => (
             <QuizCard
+              key={quiz.id}
               quiz={quiz}
             />
           ))}
