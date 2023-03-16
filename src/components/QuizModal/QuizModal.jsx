@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Button,
   Box,
@@ -29,26 +29,26 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
     <Modal
       open={open}
       onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      aria-labelledby='modal-modal-title'
+      aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
         <img src={quiz.img} alt={quiz.title}/>
-        <div className="info">
-          <Typography gutterBottom variant="h5" component="div">
+        <div className='info'>
+          <Typography gutterBottom variant='h5' component='div'>
             {quiz.title}
           </Typography>
-          <Typography variant="body2">
+          <Typography variant='body2'>
             {quiz.description}
           </Typography>
         </div>
         <Button
-          size="small"
-          variant="outlined"
+          size='small'
+          variant='outlined'
           sx={{
             color: 'white',
             borderColor: '#F7EC59',
-            "&:hover": {
+            '&:hover': {
               borderColor: '#FEC601',
             }
           }}

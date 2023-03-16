@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Card,
   Alert,
@@ -7,13 +7,13 @@ import {
   CardMedia,
   Button,
   Typography
-} from "@mui/material";
-import QuizModal from "../QuizModal/QuizModal";
+} from '@mui/material';
+import QuizModal from '../QuizModal/QuizModal';
 
 const btnStyles = {
   color: 'white',
   borderColor: '#F7EC59',
-  "&:hover": {
+  '&:hover': {
     borderColor: '#FEC601',
   }
 }
@@ -47,10 +47,10 @@ function QuizCard({ quiz }) {
           color: 'white',
           textAlign: 'center',
         }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant='h5' component='div'>
           {quiz.title}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant='body2'>
           {quiz.description}
         </Typography>
       </CardContent>
@@ -62,16 +62,16 @@ function QuizCard({ quiz }) {
         }}
       >
         <Button
-          size="small"
-          variant="outlined"
+          size='small'
+          variant='outlined'
           sx={btnStyles}
           onClick={handleStart}
         >
           Start
         </Button>
         <Button
-          size="small"
-          variant="outlined"
+          size='small'
+          variant='outlined'
           sx={btnStyles}
           onClick={handleOpen}
         >
@@ -79,7 +79,7 @@ function QuizCard({ quiz }) {
         </Button>
       </CardActions>
       {isStarted
-        && <Alert severity="success" sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
+        && <Alert severity='success' sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
       <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
     </Card>
   );

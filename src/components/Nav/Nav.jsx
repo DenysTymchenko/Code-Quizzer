@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import { Button } from '@mui/material';
-import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from '@mui/icons-material/Home';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import "./Nav.css"
+import './Nav.css'
 
 const btnStyles = {
   display: 'flex',
   gap: '10px',
   color: 'white',
   borderColor: '#F7EC59',
-  "&:hover": {
+  '&:hover': {
     borderColor: '#FEC601',
   }
 }
@@ -24,7 +24,7 @@ function Nav() {
       {pages.map((page, index) => (
         <Button
           key={index}
-          variant="outlined"
+          variant='outlined'
           sx={btnStyles}
         >
           {icons[index]}{page}

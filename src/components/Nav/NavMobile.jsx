@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
   Button,
   Menu,
   MenuItem,
 } from '@mui/material';
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import FactCheckIcon from "@mui/icons-material/FactCheck";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 function NavMobile() {
   const pages = ['Home', 'Quizzes', 'Other'];
@@ -25,9 +25,9 @@ function NavMobile() {
   return (
     <nav>
       <Button
-        id="basic-button"
+        id='basic-button'
         aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
+        aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         sx={{color: 'white'}}
@@ -35,7 +35,7 @@ function NavMobile() {
         <MenuIcon />
       </Button>
       <Menu
-        id="basic-menu"
+        id='basic-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

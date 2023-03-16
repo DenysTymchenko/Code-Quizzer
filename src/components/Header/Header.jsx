@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import { Typography, useMediaQuery } from "@mui/material";
-import Nav from "../Nav/Nav";
-import NavMobile from "../Nav/NavMobile";
+import { Typography, useMediaQuery } from '@mui/material';
+import Nav from '../Nav/Nav';
+import NavMobile from '../Nav/NavMobile';
 import './Header.css'
 
 
@@ -11,9 +11,9 @@ function Header() {
 
   return (
     <header>
-      <div className="logo">
+      <div className='logo'>
         <AccessAlarmIcon />
-        <Typography variant="h5">Quiz App</Typography>
+        <Typography variant='h5'>Quiz App</Typography>
       </div>
       {isBigScreen ? <Nav /> : <NavMobile />}
     </header>
