@@ -78,8 +78,8 @@ function QuizCard({ quiz }) {
           Learn More
         </Button>
       </CardActions>
-
-      {isStarted && <Alert severity="success" sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
+      {isStarted
+        && <Alert severity="success" sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
       <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
     </Card>
   );
