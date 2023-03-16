@@ -6,6 +6,18 @@ img {
   object-position: center;
 }
 
+img + * {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  color: #252422;
+}
+
 .info {
   padding: 10px 5px;
 }

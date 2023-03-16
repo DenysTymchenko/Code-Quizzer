@@ -5,6 +5,7 @@ import {
   Modal,
   Typography
 } from '@mui/material/';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import './QuizModal.css'
 
 const style = {
@@ -34,6 +35,9 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
     >
       <Box sx={style}>
         <img src={quiz.img} alt={quiz.title}/>
+        <Typography gutterBottom variant='h6' component='div'>
+          <QueryBuilderIcon/> {quiz.time / 60000} min.
+        </Typography>
         <div className='info'>
           <Typography gutterBottom variant='h5' component='div'>
             {quiz.title}
