@@ -35,7 +35,7 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
     >
       <Box sx={style}>
         <img src={quiz.img} alt={quiz.title}/>
-        <Typography gutterBottom variant='h6' component='div'>
+        <Typography className='time' gutterBottom variant='h6' component='div'>
           <QueryBuilderIcon/> {quiz.time / 60000} min.
         </Typography>
         <div className='info'>
@@ -46,20 +46,36 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
             {quiz.description}
           </Typography>
         </div>
-        <Button
-          size='small'
-          variant='outlined'
-          sx={{
-            color: 'white',
-            borderColor: '#F7EC59',
-            '&:hover': {
-              borderColor: '#FEC601',
-            }
-          }}
-          onClick={handleStart}
-        >
-          Start
-        </Button>
+        <div className='buttons'>
+          <Button
+            size='small'
+            variant='outlined'
+            sx={{
+              color: 'white',
+              borderColor: '#F7EC59',
+              '&:hover': {
+                borderColor: '#FEC601',
+              }
+            }}
+            onClick={handleStart}
+          >
+            Start
+          </Button>
+          <Button
+            size='small'
+            variant='outlined'
+            sx={{
+              color: 'white',
+              borderColor: '#F7EC59',
+              '&:hover': {
+                borderColor: '#FEC601',
+              }
+            }}
+            onClick={handleClose}
+          >
+            Close
+          </Button>
+        </div>
       </Box>
     </Modal>
   );
