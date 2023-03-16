@@ -10,20 +10,16 @@ function Footer() {
   return (
     <footer>
       <Typography variant="body1">Created by: Denys Tymchenko</Typography>
-
       <div className="socials">
         <a href="https://github.com/DenysTymchenko">
           <GitHubIcon />
         </a>
-
         <a href="https://t.me/DenysTymchenko">
           <TelegramIcon />
         </a>
-
         <a href="mailto:tymchenko.denys@gamil.com">
           <EmailIcon />
         </a>
-
         <a href="https://www.linkedin.com/in/denys-tymchenko-0031b1251/">
           <LinkedInIcon />
         </a>

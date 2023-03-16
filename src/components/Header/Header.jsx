@@ -15,7 +15,6 @@ function Header() {
         <AccessAlarmIcon />
         <Typography variant="h5">Quiz App</Typography>
       </div>
-
       {isBigScreen ? <Nav /> : <NavMobile />}
     </header>
   )

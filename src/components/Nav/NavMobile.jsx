@@ -34,7 +34,6 @@ function NavMobile() {
       >
         <MenuIcon />
       </Button>
-
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}

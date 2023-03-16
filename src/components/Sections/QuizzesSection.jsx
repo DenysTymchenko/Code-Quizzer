@@ -26,7 +26,6 @@ function QuizzesSection() {
       <Typography variant="h3" sx={h3Styles}>
         Best way to start
       </Typography>
-
       <div className="wrapper">
         {quizzes.map(quiz => (
           <QuizCard

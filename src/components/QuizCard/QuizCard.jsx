@@ -41,7 +41,6 @@ function QuizCard({ quiz }) {
         image={quiz.img}
         title={quiz.title}
       />
-
       <CardContent
         sx={{
           backgroundColor: '#252422',
@@ -55,7 +54,6 @@ function QuizCard({ quiz }) {
           {quiz.description}
         </Typography>
       </CardContent>
-
       <CardActions
         sx={{
           display: 'flex',
@@ -71,7 +69,6 @@ function QuizCard({ quiz }) {
         >
           Start
         </Button>
-
         <Button
           size="small"
           variant="outlined"

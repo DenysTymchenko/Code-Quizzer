@@ -34,17 +34,14 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
     >
       <Box sx={style}>
         <img src={quiz.img} alt={quiz.title}/>
-
         <div className="info">
           <Typography gutterBottom variant="h5" component="div">
             {quiz.title}
           </Typography>
-
           <Typography variant="body2">
             {quiz.description}
           </Typography>
         </div>
-
         <Button
           size="small"
           variant="outlined"

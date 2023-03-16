@@ -22,16 +22,13 @@ function GreetingsSection() {
   return (
     <section className="greetings">
       <video src={videoBg} autoPlay loop muted></video>
-
       <div className="wrapper">
         <Typography variant="h1" gutterBottom sx={h1Styles}>
           Welcome to Quizz App!
         </Typography>
-
         <Typography variant="h2" gutterBottom sx={h2Styles}>
           Place where you can check your programing skills.
         </Typography>
-
         <a href="#quizzes">
           <KeyboardDoubleArrowDownIcon style={{width: '50px', height: '50px'}}/>
         </a>
