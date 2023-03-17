@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import QuizCard from '../QuizCard/QuizCard';
-import axios from 'axios';
+import { quizzes } from "../../api";
 
 const h3Styles = {
   textAlign: 'center',
@@ -12,12 +12,16 @@ const h3Styles = {
 }
 
 function QuizzesSection() {
-  let [quizzes, setQuizzes] = useState([]);
+  let [quizzesData, setQuizzesData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const {data} = await axios.get('https://63ef5f59271439b7fe6d10b5.mockapi.io/quizzes');
-      setQuizzes(data);
+      try {
+        const {data} = await quizzes.fetch();
+        setQuizzesData(data);
+      } catch (e) {
+        console.log(e);
+      }
     })();
   }, []);
 
@@ -27,7 +31,7 @@ function QuizzesSection() {
         Best way to start
       </Typography>
       <div className='wrapper'>
-        {quizzes.map(quiz => (
+        {quizzesData.map(quiz => (
           <QuizCard
             key={quiz.id}
             quiz={quiz}
