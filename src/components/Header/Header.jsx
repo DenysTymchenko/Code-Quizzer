@@ -1,8 +1,8 @@
 import React from 'react';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { Typography, useMediaQuery } from '@mui/material';
-import Nav from '../Nav/Nav';
-import NavMobile from '../Nav/NavMobile';
+import Nav from '../Nav/Default/Nav';
+import NavMobile from '../Nav/Mobile/NavMobile';
 import './Header.css'
 
 
