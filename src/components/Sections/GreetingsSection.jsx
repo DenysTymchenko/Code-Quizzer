@@ -24,7 +24,7 @@ function GreetingsSection() {
       <video src='./assets/videoBg.mp4' autoPlay loop muted></video>
       <div className='wrapper'>
         <Typography variant='h1' gutterBottom sx={h1Styles}>
-          Welcome to Quizz App!
+          Welcome to Code Quizzer!
         </Typography>
         <Typography variant='h2' gutterBottom sx={h2Styles}>
           Place where you can check your programing skills.

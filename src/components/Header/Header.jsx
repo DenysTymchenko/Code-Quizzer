@@ -1,5 +1,5 @@
 import React from 'react';
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import CodeIcon from '@mui/icons-material/Code';
 import { Typography, useMediaQuery } from '@mui/material';
 import Nav from '../Nav/Default/Nav';
 import NavMobile from '../Nav/Mobile/NavMobile';
@@ -12,8 +12,18 @@ function Header() {
   return (
     <header>
       <div className='logo'>
-        <AccessAlarmIcon />
-        <Typography variant='h5'>Quiz App</Typography>
+        <Typography 
+          variant='h5' 
+          sx={{
+            display:'flex', 
+            alignItems:'center',
+            gap: '5px',
+          }}
+        >
+          Code
+          <CodeIcon />
+          Quizzer
+        </Typography>
       </div>
       {isBigScreen ? <Nav /> : <NavMobile />}
     </header>
