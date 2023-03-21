@@ -6,7 +6,7 @@ import {
   Typography
 } from '@mui/material/';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import './QuizModal.css'
+import './QuizModal.css';
 
 const style = {
   position: 'absolute',
@@ -25,60 +25,64 @@ const style = {
   paddingBottom: '10px',
 };
 
-function QuizModal({ open, handleClose, quiz, handleStart }) {
-  return (
-    <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby='modal-modal-title'
-      aria-describedby='modal-modal-description'
-    >
-      <Box sx={style}>
-        <img src={quiz.img} alt={quiz.title}/>
-        <Typography className='time' gutterBottom variant='h6' component='div'>
-          <QueryBuilderIcon/> {quiz.time / 60000} min.
-        </Typography>
-        <div className='info'>
-          <Typography gutterBottom variant='h5' component='div'>
-            {quiz.title}
+class QuizModal extends React.Component {
+  render() {
+    const { open, handleClose, quiz, handleStart } = this.props;
+
+    return (
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='modal-modal-title'
+        aria-describedby='modal-modal-description'
+      >
+        <Box sx={style}>
+          <img src={quiz.img} alt={quiz.title}/>
+          <Typography className='time' gutterBottom variant='h6' component='div'>
+            <QueryBuilderIcon/> {quiz.time / 60000} min.
           </Typography>
-          <Typography variant='body2'>
-            {quiz.description}
-          </Typography>
-        </div>
-        <div className='buttons'>
-          <Button
-            size='small'
-            variant='outlined'
-            sx={{
-              color: 'white',
-              borderColor: '#F7EC59',
-              '&:hover': {
-                borderColor: '#FEC601',
-              }
-            }}
-            onClick={handleStart}
-          >
-            Start
-          </Button>
-          <Button
-            size='small'
-            variant='outlined'
-            sx={{
-              color: 'white',
-              borderColor: '#F7EC59',
-              '&:hover': {
-                borderColor: '#FEC601',
-              }
-            }}
-            onClick={handleClose}
-          >
-            Close
-          </Button>
-        </div>
-      </Box>
-    </Modal>
-  );
+          <div className='info'>
+            <Typography gutterBottom variant='h5' component='div'>
+              {quiz.title}
+            </Typography>
+            <Typography variant='body2'>
+              {quiz.description}
+            </Typography>
+          </div>
+          <div className='buttons'>
+            <Button
+              size='small'
+              variant='outlined'
+              sx={{
+                color: 'white',
+                borderColor: '#F7EC59',
+                '&:hover': {
+                  borderColor: '#FEC601',
+                }
+              }}
+              onClick={handleStart}
+            >
+              Start
+            </Button>
+            <Button
+              size='small'
+              variant='outlined'
+              sx={{
+                color: 'white',
+                borderColor: '#F7EC59',
+                '&:hover': {
+                  borderColor: '#FEC601',
+                }
+              }}
+              onClick={handleClose}
+            >
+              Close
+            </Button>
+          </div>
+        </Box>
+      </Modal>
+    );
+  }
 }
 
 export default QuizModal;

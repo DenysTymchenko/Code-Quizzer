@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 import QuizCard from '../QuizCard/QuizCard';
 import { quizzes } from "../../api";
@@ -9,37 +9,40 @@ const h3Styles = {
   '@media (max-width:600px)': {
     fontSize: '2.5rem',
   },
-}
+};
 
-function QuizzesSection() {
-  let [quizzesData, setQuizzesData] = useState([]);
+class QuizzesSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quizzesData: [],
+    };
+  }
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const {data} = await quizzes.fetch();
-        setQuizzesData(data);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
-  }, []);
+  componentDidMount() {
+    quizzes.fetch()
+      .then(response => {
+        this.setState({quizzesData: response.data});
+      })
+  }
 
-  return (
-    <section id='quizzes'>
-      <Typography variant='h3' sx={h3Styles}>
-        Best way to start
-      </Typography>
-      <div className='wrapper'>
-        {quizzesData.map(quiz => (
-          <QuizCard
-            key={quiz.id}
-            quiz={quiz}
-          />
-        ))}
-      </div>
-    </section>
-  )
+  render() {
+    return (
+      <section id='quizzes'>
+        <Typography variant='h3' sx={h3Styles}>
+          Best way to start
+        </Typography>
+        <div className='wrapper'>
+          {this.state.quizzesData.map(quiz => (
+            <QuizCard
+              key={quiz.id}
+              quiz={quiz}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
 }
 
 export default QuizzesSection;

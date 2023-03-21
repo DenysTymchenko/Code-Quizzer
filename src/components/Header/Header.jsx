@@ -1,33 +1,53 @@
 import React from 'react';
 import CodeIcon from '@mui/icons-material/Code';
-import { Typography, useMediaQuery } from '@mui/material';
+import { Typography } from '@mui/material';
 import Nav from '../Nav/Default/Nav';
 import NavMobile from '../Nav/Mobile/NavMobile';
 import './Header.css'
 
 
-function Header() {
-  const isBigScreen = useMediaQuery('(min-width:625px)');
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isBigScreen: false
+    };
+  }
 
-  return (
-    <header>
-      <div className='logo'>
-        <Typography 
-          variant='h5' 
-          sx={{
-            display:'flex', 
-            alignItems:'center',
-            gap: '5px',
-          }}
-        >
-          Code
-          <CodeIcon />
-          Quizzer
-        </Typography>
-      </div>
-      {isBigScreen ? <Nav /> : <NavMobile />}
-    </header>
-  )
+  componentDidMount() {
+    this.updateScreenSize();
+    window.addEventListener("resize", this.updateScreenSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateScreenSize);
+  }
+
+  updateScreenSize = () => {
+    this.setState({ isBigScreen: window.innerWidth >= 625 });
+  }
+
+  render() {
+    return (
+      <header>
+        <div className='logo'>
+          <Typography
+            variant='h5'
+            sx={{
+              display:'flex',
+              alignItems:'center',
+              gap: '5px',
+            }}
+          >
+            Code
+            <CodeIcon />
+            Quizzer
+          </Typography>
+        </div>
+        {this.state.isBigScreen ? <Nav /> : <NavMobile />}
+      </header>
+    )
+  }
 }
 
 export default Header;

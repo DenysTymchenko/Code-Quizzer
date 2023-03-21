@@ -6,26 +6,28 @@ import EmailIcon from '@mui/icons-material/Email';
 import { Typography } from '@mui/material';
 import './Footer.css'
 
-function Footer() {
-  return (
-    <footer>
-      <Typography variant='body1'>Created by: Denys Tymchenko</Typography>
-      <div className='socials'>
-        <a href='https://github.com/DenysTymchenko'>
-          <GitHubIcon />
-        </a>
-        <a href='https://t.me/DenysTymchenko'>
-          <TelegramIcon />
-        </a>
-        <a href='mailto:tymchenko.denys@gamil.com'>
-          <EmailIcon />
-        </a>
-        <a href='https://www.linkedin.com/in/denys-tymchenko-0031b1251/'>
-          <LinkedInIcon />
-        </a>
-      </div>
-    </footer>
-  )
+class Footer extends React.Component {
+  render() {
+    return (
+      <footer>
+        <Typography variant='body1'>Created by: Denys Tymchenko</Typography>
+        <div className='socials'>
+          <a href='https://github.com/DenysTymchenko'>
+            <GitHubIcon/>
+          </a>
+          <a href='https://t.me/DenysTymchenko'>
+            <TelegramIcon/>
+          </a>
+          <a href='mailto:tymchenko.denys@gamil.com'>
+            <EmailIcon/>
+          </a>
+          <a href='https://www.linkedin.com/in/denys-tymchenko-0031b1251/'>
+            <LinkedInIcon/>
+          </a>
+        </div>
+      </footer>
+    )
+  }
 }
 
 export default Footer;

@@ -9,61 +9,77 @@ import HomeIcon from '@mui/icons-material/Home';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-function NavMobile() {
-  const pages = ['Home', 'Quizzes', 'Other'];
-  const icons = [<HomeIcon/>, <FactCheckIcon/>, <MoreHorizIcon/>];
+class NavMobile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      anchorEl: null,
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  handleClick(event) {
+    this.setState({
+      anchorEl: event.currentTarget,
+    });
+  }
 
-  return (
-    <nav>
-      <Button
-        id='basic-button'
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup='true'
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{color: 'white'}}
-      >
-        <MenuIcon />
-      </Button>
-      <Menu
-        id='basic-menu'
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-        PaperProps={{
-          style: {
-            backgroundColor: '#252422',
-            color: 'white',
-          }
-        }}
-      >
-        {pages.map((page, index) => (
-          <MenuItem
-            key={index}
-            onClick={handleClose}
-            sx={{
-              display: 'flex',
-              gap: '10px',
-            }}
-          >
-            {icons[index]}{page}
-          </MenuItem>
-        ))}
-      </Menu>
-    </nav>
-  )
+  handleClose() {
+    this.setState({
+      anchorEl: null,
+    });
+  }
+
+  render() {
+    const pages = ['Home', 'Quizzes', 'Other'];
+    const icons = [<HomeIcon/>, <FactCheckIcon/>, <MoreHorizIcon/>];
+    
+    const open = Boolean(this.state.anchorEl);
+
+    return (
+      <nav>
+        <Button
+          id='basic-button'
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup='true'
+          aria-expanded={open ? 'true' : undefined}
+          onClick={this.handleClick}
+          sx={{color: 'white'}}
+        >
+          <MenuIcon />
+        </Button>
+        <Menu
+          id='basic-menu'
+          anchorEl={this.state.anchorEl}
+          open={open}
+          onClose={this.handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+          PaperProps={{
+            style: {
+              backgroundColor: '#252422',
+              color: 'white',
+            }
+          }}
+        >
+          {pages.map((page, index) => (
+            <MenuItem
+              key={index}
+              onClick={this.handleClose}
+              sx={{
+                display: 'flex',
+                gap: '10px',
+              }}
+            >
+              {icons[index]}{page}
+            </MenuItem>
+          ))}
+        </Menu>
+      </nav>
+    )
+  }
 }
 
 export default NavMobile;

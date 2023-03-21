@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Card,
   Alert,
@@ -26,63 +26,88 @@ const alertStyles = {
   zIndex: '9999',
 }
 
-function QuizCard({ quiz }) {
-  const [isStarted, setStart] = useState(false);
-  const handleStart = () => setStart(!isStarted); //temporary for open/close alert
+class QuizCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isStarted : false,
+      open : false,
+    };
+    this.handleStart = this.handleStart.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+  
+  handleStart() {
+    this.setState({
+      isStarted: !this.state.isStarted,
+    });
+  }
+  handleOpen() {
+    this.setState({
+      open: true,
+    });
+  }
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  handleClose() {
+    this.setState({
+      open: false,
+    });
+  }
 
-  return (
-    <Card sx={{maxWidth: 345, height: 'fit-content'}}>
-      <CardMedia
-        sx={{height: 300}}
-        image={quiz.img}
-        title={quiz.title}
-      />
-      <CardContent
-        sx={{
-          backgroundColor: '#252422',
-          color: 'white',
-          textAlign: 'center',
-        }}>
-        <Typography gutterBottom variant='h5' component='div'>
-          {quiz.title}
-        </Typography>
-        <Typography variant='body2'>
-          {quiz.description}
-        </Typography>
-      </CardContent>
-      <CardActions
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          backgroundColor: '#252422',
-        }}
-      >
-        <Button
-          size='small'
-          variant='outlined'
-          sx={btnStyles}
-          onClick={handleStart}
+  render() {
+    const { quiz } = this.props;
+      
+    return (
+      <Card sx={{maxWidth: 345, height: 'fit-content'}}>
+        <CardMedia
+          sx={{height: 300}}
+          image={quiz.img}
+          title={quiz.title}
+        />
+        <CardContent
+          sx={{
+            backgroundColor: '#252422',
+            color: 'white',
+            textAlign: 'center',
+          }}>
+          <Typography gutterBottom variant='h5' component='div'>
+            {quiz.title}
+          </Typography>
+          <Typography variant='body2'>
+            {quiz.description}
+          </Typography>
+        </CardContent>
+        <CardActions
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            backgroundColor: '#252422',
+          }}
         >
-          Start
-        </Button>
-        <Button
-          size='small'
-          variant='outlined'
-          sx={btnStyles}
-          onClick={handleOpen}
-        >
-          Learn More
-        </Button>
-      </CardActions>
-      {isStarted
-        && <Alert severity='success' sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
-      <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
-    </Card>
-  );
+          <Button
+            size='small'
+            variant='outlined'
+            sx={btnStyles}
+            onClick={this.handleStart}
+          >
+            Start
+          </Button>
+          <Button
+            size='small'
+            variant='outlined'
+            sx={btnStyles}
+            onClick={this.handleOpen}
+          >
+            Learn More
+          </Button>
+        </CardActions>
+        {this.state.isStarted
+          && <Alert severity='success' sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
+        <QuizModal open={this.state.open} handleClose={this.handleClose} quiz={quiz} handleStart={this.handleStart}/>
+      </Card>
+    );
+  }
 }
 
 export default QuizCard;
