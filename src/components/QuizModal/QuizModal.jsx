@@ -3,10 +3,10 @@ import {
   Button,
   Box,
   Modal,
-  Typography
+  Typography,
 } from '@mui/material/';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import './QuizModal.css'
+import './QuizModal.css';
 
 const style = {
   position: 'absolute',
@@ -25,7 +25,9 @@ const style = {
   paddingBottom: '10px',
 };
 
-function QuizModal({ open, handleClose, quiz, handleStart }) {
+function QuizModal({
+  open, handleClose, quiz, handleStart,
+}) {
   return (
     <Modal
       open={open}
@@ -55,7 +57,7 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
               borderColor: '#F7EC59',
               '&:hover': {
                 borderColor: '#FEC601',
-              }
+              },
             }}
             onClick={handleStart}
           >
@@ -69,7 +71,7 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
               borderColor: '#F7EC59',
               '&:hover': {
                 borderColor: '#FEC601',
-              }
+              },
             }}
             onClick={handleClose}
           >

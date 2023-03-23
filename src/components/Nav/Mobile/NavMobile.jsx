@@ -11,6 +11,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 function NavMobile() {
   const pages = ['Home', 'Quizzes', 'Other'];
+  // eslint-disable-next-line react/jsx-key
   const icons = [<HomeIcon/>, <FactCheckIcon/>, <MoreHorizIcon/>];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,7 +31,7 @@ function NavMobile() {
         aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{color: 'white'}}
+        sx={{ color: 'white' }}
       >
         <MenuIcon />
       </Button>
@@ -46,7 +47,7 @@ function NavMobile() {
           style: {
             backgroundColor: '#252422',
             color: 'white',
-          }
+          },
         }}
       >
         {pages.map((page, index) => (
@@ -63,7 +64,7 @@ function NavMobile() {
         ))}
       </Menu>
     </nav>
-  )
+  );
 }
 
 export default NavMobile;

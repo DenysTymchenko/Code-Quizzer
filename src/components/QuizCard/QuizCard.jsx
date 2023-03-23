@@ -6,7 +6,7 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography
+  Typography,
 } from '@mui/material';
 import QuizModal from '../QuizModal/QuizModal';
 
@@ -15,8 +15,8 @@ const btnStyles = {
   borderColor: '#F7EC59',
   '&:hover': {
     borderColor: '#FEC601',
-  }
-}
+  },
+};
 
 const alertStyles = {
   position: 'absolute',
@@ -24,20 +24,20 @@ const alertStyles = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   zIndex: '9999',
-}
+};
 
 function QuizCard({ quiz }) {
   const [isStarted, setStart] = useState(false);
-  const handleStart = () => setStart(!isStarted); //temporary for open/close alert
+  const handleStart = () => setStart(!isStarted); // temporary for open/close alert
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <Card sx={{maxWidth: 345, height: 'fit-content'}}>
+    <Card sx={{ maxWidth: 345, height: 'fit-content' }}>
       <CardMedia
-        sx={{height: 300}}
+        sx={{ height: 300 }}
         image={quiz.img}
         title={quiz.title}
       />
