@@ -19,7 +19,7 @@ const h2Styles = {
 
 function NotFound() {
   return (
-    <section className='not-found h100vh'>
+    <main className='not-found h100vh'>
       <video src='./assets/not_foud.mp4' autoPlay loop muted></video>
       <div className='text'>
         <Typography variant='h1' gutterBottom sx={h1Styles}>
@@ -29,7 +29,7 @@ function NotFound() {
           None but devils play past here... Turn back.
         </Typography>
       </div>
-    </section>
+    </main>
   );
 }
 
