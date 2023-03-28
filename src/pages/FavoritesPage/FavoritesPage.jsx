@@ -10,7 +10,7 @@ const h3Styles = {
 };
 
 const SearchBar = styled(TextField)({
-  width: '35vw',
+  width: '500px',
   '& label.Mui-focused': {
     color: '#252422',
   },
@@ -27,6 +27,9 @@ const SearchBar = styled(TextField)({
     '&.Mui-focused fieldset': {
       borderColor: '#252422',
     },
+  },
+  '@media (max-width:600px)': {
+    width: '300px',
   },
 });
 
