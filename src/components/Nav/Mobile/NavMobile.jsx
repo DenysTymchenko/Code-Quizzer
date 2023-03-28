@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Menu,
@@ -7,12 +8,13 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import StarIcon from '@mui/icons-material/Star';
 
 function NavMobile() {
-  const pages = ['Home', 'Quizzes', 'Other'];
+  const pages = ['Home', 'Quizzes', 'Favorites'];
+  const links = ['/', '/quizzes', '/favorites'];
   // eslint-disable-next-line react/jsx-key
-  const icons = [<HomeIcon/>, <FactCheckIcon/>, <MoreHorizIcon/>];
+  const icons = [<HomeIcon />, <FactCheckIcon />, <StarIcon />];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -51,16 +53,18 @@ function NavMobile() {
         }}
       >
         {pages.map((page, index) => (
-          <MenuItem
-            key={index}
-            onClick={handleClose}
-            sx={{
-              display: 'flex',
-              gap: '10px',
-            }}
-          >
-            {icons[index]}{page}
-          </MenuItem>
+          <Link to={links[index]} key={page}>
+            <MenuItem
+              key={page}
+              onClick={handleClose}
+              sx={{
+                display: 'flex',
+                gap: '10px',
+              }}
+            >
+              {icons[index]}{page}
+            </MenuItem>
+          </Link>
         ))}
       </Menu>
     </nav>
