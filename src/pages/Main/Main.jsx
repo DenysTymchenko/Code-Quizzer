@@ -5,7 +5,7 @@ import './Main.css';
 
 function Main() {
   return (
-    <main>
+    <main className='main-page'>
       <GreetingsSection />
       <QuizzesSection />
     </main>
