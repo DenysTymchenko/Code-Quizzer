@@ -1,0 +1,19 @@
+.quizzes-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  color: #252422;
+  background-color: #FEC601;
+  padding: 35px;
+}
+
+.quizzes-page .quizzes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}

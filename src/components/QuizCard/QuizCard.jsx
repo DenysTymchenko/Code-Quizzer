@@ -35,7 +35,7 @@ function QuizCard({ quiz }) {
   const handleClose = () => setOpen(false);
 
   return (
-    <Card sx={{ maxWidth: 345, height: 'fit-content' }}>
+    <Card sx={{ width: 325, height: 'fit-content' }}>
       <CardMedia
         sx={{ height: 300 }}
         image={quiz.img}
@@ -50,7 +50,7 @@ function QuizCard({ quiz }) {
         <Typography gutterBottom variant='h5' component='div'>
           {quiz.title}
         </Typography>
-        <Typography variant='body2'>
+        <Typography variant='body2' sx={{ height: 50 }}>
           {quiz.description}
         </Typography>
       </CardContent>

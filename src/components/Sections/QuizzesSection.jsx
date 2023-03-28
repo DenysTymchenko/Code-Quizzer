@@ -16,12 +16,8 @@ function QuizzesSection() {
 
   useEffect(() => {
     (async () => {
-      try {
-        const { data } = await quizzes.fetch();
-        setQuizzesData(data);
-      } catch (e) {
-        console.log(e);
-      }
+      const { data } = await quizzes.fetch();
+      setQuizzesData(data);
     })();
   }, []);
 
