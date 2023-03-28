@@ -43,7 +43,7 @@ function QuizzesPage() {
   }, []);
 
   return (
-    <main className='quizzes-page'>
+    <main className='quizzes-page mh100vh'>
       <Typography variant='h3' sx={h3Styles}>
         All quizzes in one place
       </Typography>

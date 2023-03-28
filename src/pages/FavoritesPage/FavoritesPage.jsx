@@ -2,7 +2,9 @@ import React from 'react';
 
 function FavoritePage() {
   return (
-    <>fav</>
+    <section>
+      text
+    </section>
   );
 }
 

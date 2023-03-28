@@ -19,7 +19,7 @@ const h2Styles = {
 
 function GreetingsSection() {
   return (
-    <section className='greetings'>
+    <section className='greetings v100vh'>
       <video src='./assets/videoBg.mp4' autoPlay loop muted></video>
       <div className='wrapper'>
         <Typography variant='h1' gutterBottom sx={h1Styles}>

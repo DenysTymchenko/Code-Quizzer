@@ -12,3 +12,11 @@ body {
   color: #252422;
   background-color: #FEC601;
 }
+
+.h100vh {
+  height: 100vh;
+}
+
+.mh100vh {
+  min-height: 100vh;
+}

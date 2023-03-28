@@ -1,5 +1,4 @@
 .greetings {
-  height: 100vh;
   position: relative;
 }
 
@@ -27,7 +26,6 @@
 
 #quizzes {
   position: relative;
-  min-height: 100vh;
   padding: 35px;
 }
 

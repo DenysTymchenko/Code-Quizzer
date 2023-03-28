@@ -22,7 +22,7 @@ function QuizzesSection() {
   }, []);
 
   return (
-    <section id='quizzes'>
+    <section id='quizzes' className='mh100vh'>
       <Typography variant='h3' sx={h3Styles}>
         Best way to start
       </Typography>
