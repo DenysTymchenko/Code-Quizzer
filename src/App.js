@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import NotFound from './pages/NotFound/NotFound';
+import Quizzes from './pages/QuizzesPage/QuizzesPage';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Main />} />
-          <Route path='*' element={<NotFound />}/>
+          <Route path='/quizzes' element={<Quizzes />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <Footer />
