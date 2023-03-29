@@ -11,5 +11,14 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+}
+
+.logo > h5 {
+    display: flex;
+    align-items: center;
+}
+
+.logo > h5 > svg {
+    width: 20px;
+    height: 32px;
 }
