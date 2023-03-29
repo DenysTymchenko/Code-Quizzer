@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Box,
@@ -26,7 +27,7 @@ const style = {
 };
 
 function QuizModal({
-  open, handleClose, quiz, handleStart,
+  open, handleClose, quiz, getQuizPath,
 }) {
   return (
     <Modal
@@ -49,20 +50,21 @@ function QuizModal({
           </Typography>
         </div>
         <div className='buttons'>
-          <Button
-            size='small'
-            variant='outlined'
-            sx={{
-              color: 'white',
-              borderColor: '#F7EC59',
-              '&:hover': {
-                borderColor: '#FEC601',
-              },
-            }}
-            onClick={handleStart}
-          >
-            Start
-          </Button>
+          <Link to={getQuizPath()}>
+            <Button
+              size="small"
+              variant="outlined"
+              sx={{
+                color: 'white',
+                borderColor: '#F7EC59',
+                '&:hover': {
+                  borderColor: '#FEC601',
+                },
+              }}
+            >
+              Start
+            </Button>
+          </Link>
           <Button
             size='small'
             variant='outlined'

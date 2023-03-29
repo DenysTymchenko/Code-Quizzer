@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
-  Alert,
   CardActions,
   CardContent,
   CardMedia,
@@ -18,21 +18,12 @@ const btnStyles = {
   },
 };
 
-const alertStyles = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  zIndex: '9999',
-};
-
 function QuizCard({ quiz }) {
-  const [isStarted, setStart] = useState(false);
-  const handleStart = () => setStart(!isStarted); // temporary for open/close alert
-
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const getQuizPath = () => `/quiz/${quiz.title.replaceAll(' ', '_').toLowerCase()}`;
 
   return (
     <Card sx={{ width: 325, height: 'fit-content' }}>
@@ -61,14 +52,15 @@ function QuizCard({ quiz }) {
           backgroundColor: '#252422',
         }}
       >
-        <Button
-          size='small'
-          variant='outlined'
-          sx={btnStyles}
-          onClick={handleStart}
-        >
-          Start
-        </Button>
+        <Link to={getQuizPath()}>
+          <Button
+            size="small"
+            variant="outlined"
+            sx={btnStyles}
+          >
+            Start
+          </Button>
+        </Link>
         <Button
           size='small'
           variant='outlined'
@@ -78,9 +70,12 @@ function QuizCard({ quiz }) {
           Learn More
         </Button>
       </CardActions>
-      {isStarted
-        && <Alert severity='success' sx={alertStyles}>Quiz started (Temporary realisation)</Alert>}
-      <QuizModal open={open} handleClose={handleClose} quiz={quiz} handleStart={handleStart} />
+      <QuizModal
+        open={open}
+        handleClose={handleClose}
+        quiz={quiz}
+        getQuizPath={getQuizPath}
+      />
     </Card>
   );
 }
