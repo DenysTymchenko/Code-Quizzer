@@ -38,10 +38,23 @@ function QuizCard({ quiz }) {
           color: 'white',
           textAlign: 'center',
         }}>
-        <Typography gutterBottom variant='h5' component='div'>
+        <Typography
+          sx={{
+            height: 32,
+            overflow: 'auto',
+          }}
+          gutterBottom
+          variant="h5"
+          component="div"
+        >
           {quiz.title}
         </Typography>
-        <Typography variant='body2' sx={{ height: 50 }}>
+        <Typography
+          sx={{
+            height: 50,
+            overflow: 'auto',
+          }}
+          variant="body2">
           {quiz.description}
         </Typography>
       </CardContent>

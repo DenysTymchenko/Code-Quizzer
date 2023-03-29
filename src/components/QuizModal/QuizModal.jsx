@@ -42,10 +42,23 @@ function QuizModal({
           <QueryBuilderIcon/> {quiz.time / 60000} min.
         </Typography>
         <div className='info'>
-          <Typography gutterBottom variant='h5' component='div'>
+          <Typography
+            sx={{
+              height: 32,
+              overflow: 'auto',
+            }}
+            gutterBottom variant='h5'
+            component='div'
+          >
             {quiz.title}
           </Typography>
-          <Typography variant='body2'>
+          <Typography
+            sx={{
+              height: 50,
+              overflow: 'auto',
+            }}
+            variant='body2'
+          >
             {quiz.description}
           </Typography>
         </div>
