@@ -38,7 +38,6 @@ const SearchBar = styled(TextField)({
 function QuizzesPage() {
   const [query, setQuery] = useState('');
   const [quizzesData, setQuizzesData] = useState([]);
-  console.log(quizzes);
 
   useEffect(() => {
     (async () => {
