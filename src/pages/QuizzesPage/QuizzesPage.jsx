@@ -36,14 +36,20 @@ const SearchBar = styled(TextField)({
 });
 
 function QuizzesPage() {
+  const [query, setQuery] = useState('');
   const [quizzesData, setQuizzesData] = useState([]);
+  console.log(quizzes);
 
   useEffect(() => {
     (async () => {
-      const { data } = await quizzes.fetch();
+      const { data } = query ? await quizzes.queryFetch(query) : await quizzes.fetch();
       setQuizzesData(data);
     })();
-  }, []);
+  }, [query]);
+
+  const handleQuery = (input) => {
+    setQuery(input);
+  };
 
   return (
     <main className='quizzes-page mh100vh'>
@@ -55,6 +61,7 @@ function QuizzesPage() {
         label="Looking for a specific one?"
         placeholder='Search for it!'
         variant="outlined"
+        onChange={(e) => handleQuery(e.target.value)}
       />
       <section className='quizzes'>
         {quizzesData.map((quiz) => (
