@@ -1,0 +1,5 @@
+.quiz-page .question {
+  display: flex;
+  justify-content: center;
+  padding: 45px 20px;
+}

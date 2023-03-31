@@ -5,4 +5,8 @@ const quizzes = {
   queryFetch: (query) => axios.get(`/quizzes?title_like=${query}`).then((data) => data),
 };
 
-export { quizzes };
+const quiz = {
+  fetch: (quizTitle) => axios.get(`/${quizTitle}`).then((data) => data),
+};
+
+export { quizzes, quiz };

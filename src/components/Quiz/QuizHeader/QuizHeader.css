@@ -1,0 +1,18 @@
+.quiz-page .quizHeader {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.quiz-page .quizHeader h4 {
+  width: 50%;
+}
+
+.quiz-page .quizHeader h5 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
