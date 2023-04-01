@@ -2,9 +2,29 @@ import React from 'react';
 import { Button, ButtonGroup, Container } from '@mui/material';
 import './QuizAnswers.css';
 
-function QuizAnswers({ quizQuestion }) {
+function QuizAnswers({
+  answers,
+  totalQuestions,
+  index,
+  setIndex,
+  score,
+  setScore,
+  setIsEnded,
+}) {
+  const acceptAnswer = (answer) => {
+    // eslint-disable-next-line no-param-reassign,no-plusplus
+    setIndex(++index);
+    if (answer.isCorrect) {
+      // eslint-disable-next-line no-param-reassign,no-plusplus
+      setScore(++score);
+    }
+    if (index + 1 > totalQuestions) {
+      setIsEnded(true);
+    }
+  };
+
   return (
-    <Container className="answers">
+    <Container className="quiz-answers">
       <ButtonGroup
         sx={{
           width: '75%',
@@ -14,9 +34,9 @@ function QuizAnswers({ quizQuestion }) {
         aria-label="vertical contained button group"
         variant="contained"
       >
-        <Button>{quizQuestion.answers[0].answer}</Button>
-        <Button>{quizQuestion.answers[1].answer}</Button>
-        <Button>{quizQuestion.answers[2].answer}</Button>
+        {answers.map((answer) => (
+          <Button key={answer.answer} onClick={() => acceptAnswer(answer)}>{answer.answer}</Button>
+        ))}
       </ButtonGroup>
     </Container>
   );

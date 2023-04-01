@@ -4,10 +4,10 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import './QuizHeader.css';
 
-function QuizHeader({ quizData, totalQuestions }) {
+function QuizHeader({ index, quizData, totalQuestions }) {
   return (
     <Paper
-      className="quizHeader"
+      className="quiz-header"
       sx={{
         color: 'white',
         backgroundColor: '#252422',
@@ -16,7 +16,7 @@ function QuizHeader({ quizData, totalQuestions }) {
       elevation={2}
     >
       <Typography variant="h5" gutterBottom>
-        <AssignmentIcon /> 0 / {totalQuestions}
+        <AssignmentIcon /> {index + 1} / {totalQuestions}
       </Typography>
       <Typography variant="h4" gutterBottom>
         {quizData.title}

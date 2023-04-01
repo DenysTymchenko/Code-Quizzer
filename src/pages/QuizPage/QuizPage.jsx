@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container } from '@mui/material';
+import Quiz from '../../components/Quiz/Quiz';
 import { quiz } from '../../api';
 import './QuizPage.css';
-import QuizHeader from '../../components/Quiz/QuizHeader/QuizHeader';
-import QuizQuestion from '../../components/Quiz/QuizQuestion/QuizQuestion';
-import QuizAnswers from '../../components/Quiz/QuizAnswers/QuizAnswers';
+import QuizStartWindow from '../../components/QuizStartWindow/QuizStartWindow';
+import QuizResultWindow from '../../components/QuizResultWindow/QuizResultWindow';
 
 function QuizPage() {
   const { name } = useParams();
   const [quizData, setQuizData] = useState({});
   const [quizQuestions, setQuizQuestions] = useState([]);
+  const [isStarted, setIsStarted] = useState(false);
+  const [isEnded, setIsEnded] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -22,12 +25,27 @@ function QuizPage() {
 
   return (
     <main className="quiz-page mh100vh">
-      {quizQuestions.length > 0 && (
-        <Container className="quiz">
-          <QuizHeader quizData={quizData} totalQuestions={quizQuestions.length}/>
-          <QuizQuestion question={quizQuestions[0].question}/>
-          <QuizAnswers quizQuestion={quizQuestions[0]}/>
-        </Container>
+      {quizQuestions.length > 0 && !isStarted && (<QuizStartWindow quizData={quizData} setIsStarted={setIsStarted}/>)}
+      {isStarted && !isEnded && (
+        <Quiz
+          quizData={quizData}
+          quizQuestions={quizQuestions}
+          setIsEnded={setIsEnded}
+          index={index}
+          setIndex={setIndex}
+          score={score}
+          setScore={setScore}
+        />
+      )}
+      {isEnded && (
+        <QuizResultWindow
+          score={score}
+          totalQuestions={quizQuestions.length}
+          setIsEnded={setIsEnded}
+          setScore={setScore}
+          setIsStarted={setIsStarted}
+          setIndex={setIndex}
+        />
       )}
     </main>
   );

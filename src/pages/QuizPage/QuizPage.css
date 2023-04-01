@@ -2,12 +2,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.quiz-page .quiz {
-  width: 50%;
-  background-color: #FEC601;
-  border: 3px solid #252422;
-  border-radius: 4px;
-  padding: 0 !important;
+  overflow: hidden;
 }

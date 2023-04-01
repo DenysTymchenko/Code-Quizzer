@@ -4,7 +4,7 @@ import './QuizQuestion.css';
 
 function QuizQuestion({ question }) {
   return (
-    <Container className="question">
+    <Container className="quiz-question">
       <Typography
         sx={{ textAlign: 'center' }}
         variant="h4"

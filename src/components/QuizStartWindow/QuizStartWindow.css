@@ -1,0 +1,21 @@
+.quiz-start-window {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.quiz-start-window .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.quiz-start-window .wrapper h5 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

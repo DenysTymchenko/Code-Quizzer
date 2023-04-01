@@ -1,4 +1,4 @@
-.quiz-page .quizHeader {
+.quiz-header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -7,11 +7,11 @@
   padding: 20px;
 }
 
-.quiz-page .quizHeader h4 {
+.quiz-header h4 {
   width: 50%;
 }
 
-.quiz-page .quizHeader h5 {
+.quiz-header h5 {
   display: flex;
   align-items: center;
   gap: 5px;

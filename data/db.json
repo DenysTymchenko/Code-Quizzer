@@ -24,6 +24,7 @@
   ],
   "javascript_quiz": {
     "title": "JavaScript Quiz",
+    "description": "Quiz, that'll help you to check your JS skills.",
     "time": 300000,
     "questions": [
       {
@@ -220,6 +221,7 @@
   },
   "html_quiz": {
     "title": "HTML Quiz",
+    "description": "Quiz, that'll help you to check your HTML skills.",
     "time": 300000,
     "questions": [
       {
@@ -319,6 +321,7 @@
   },
   "css_quiz": {
     "title": "CSS Quiz",
+    "description": "Quiz, that'll help you to check your CSS skills.",
     "time": 300000,
     "questions": [
       {

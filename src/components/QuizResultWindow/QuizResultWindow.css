@@ -1,0 +1,26 @@
+.quiz-result-window {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.quiz-result-window .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.quiz-result-window .buttons button {
+  width: 100%;
+}
+
+@media screen and (max-width: 675px) {
+  .quiz-result-window {
+    width: fit-content;
+  }
+}
