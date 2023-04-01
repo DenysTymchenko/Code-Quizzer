@@ -8,6 +8,7 @@ import QuizResultWindow from '../../components/QuizResultWindow/QuizResultWindow
 
 function QuizPage() {
   const { name } = useParams();
+  const [pageExists, setPageExists] = useState(true);
   const [quizData, setQuizData] = useState({});
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
@@ -17,15 +18,19 @@ function QuizPage() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await quiz.fetch(name);
-      setQuizData(data);
-      setQuizQuestions(data.questions);
+      try {
+        const { data } = await quiz.fetch(name);
+        setQuizData(data);
+        setQuizQuestions(data.questions);
+      } catch {
+        setPageExists(false);
+      }
     })();
   }, []);
 
   return (
     <main className="quiz-page mh100vh">
-      {quizQuestions.length === 0 && (<Navigate to='/*' replace />)}
+      {!pageExists && (<Navigate to='/*' />)}
       {quizQuestions.length > 0 && !isStarted && (<QuizStartWindow quizData={quizData} setIsStarted={setIsStarted}/>)}
       {isStarted && !isEnded && (
         <Quiz
