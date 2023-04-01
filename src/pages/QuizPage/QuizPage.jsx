@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Quiz from '../../components/Quiz/Quiz';
 import { quiz } from '../../api';
 import './QuizPage.css';
@@ -25,6 +25,7 @@ function QuizPage() {
 
   return (
     <main className="quiz-page mh100vh">
+      {quizQuestions.length === 0 && (<Navigate to='/*' replace />)}
       {quizQuestions.length > 0 && !isStarted && (<QuizStartWindow quizData={quizData} setIsStarted={setIsStarted}/>)}
       {isStarted && !isEnded && (
         <Quiz
