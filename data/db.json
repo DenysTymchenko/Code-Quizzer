@@ -4,28 +4,28 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png",
       "title": "JavaScript Quiz",
       "description": "Quiz, that'll help you to check your JS skills.",
-      "time": 300000,
+      "time": 300,
       "id": "1"
     },
     {
       "img": "https://armyyazilim.com/wp-content/uploads/2019/10/css.png",
       "title": "CSS Quiz",
       "description": "Quiz, that'll help you to check your CSS skills.",
-      "time": 300000,
+      "time": 150,
       "id": "2"
     },
     {
       "img": "https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png",
       "title": "HTML Quiz",
       "description": "Quiz, that'll help you to check your HTML skills.",
-      "time": 300000,
+      "time": 150,
       "id": "3"
     }
   ],
   "javascript_quiz": {
     "title": "JavaScript Quiz",
     "description": "Quiz, that'll help you to check your JS skills.",
-    "time": 300000,
+    "time": 300,
     "questions": [
       {
         "question": "Inside which HTML element do we put the JavaScript?",
@@ -222,7 +222,7 @@
   "html_quiz": {
     "title": "HTML Quiz",
     "description": "Quiz, that'll help you to check your HTML skills.",
-    "time": 300000,
+    "time": 150,
     "questions": [
       {
         "question": "What does HTML stand for?",
@@ -322,7 +322,7 @@
   "css_quiz": {
     "title": "CSS Quiz",
     "description": "Quiz, that'll help you to check your CSS skills.",
-    "time": 300000,
+    "time": 150,
     "questions": [
       {
         "question": "What does CSS stand for?",

@@ -13,6 +13,7 @@ function Quiz({
   setIndex,
   score,
   setScore,
+  setTimeIsUp,
 }) {
   return (
     <Container className="quiz">
@@ -20,6 +21,8 @@ function Quiz({
         index={index}
         quizData={quizData}
         totalQuestions={quizQuestions.length}
+        setIsEnded={setIsEnded}
+        setTimeIsUp={setTimeIsUp}
       />
       <QuizQuestion question={quizQuestions[index].question}/>
       <QuizAnswers

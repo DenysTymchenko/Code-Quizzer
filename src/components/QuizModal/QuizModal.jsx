@@ -29,6 +29,21 @@ const style = {
 function QuizModal({
   open, handleClose, quiz, getQuizPath,
 }) {
+  const {
+    img,
+    title,
+    description,
+    time,
+  } = quiz;
+
+  const showTime = () => {
+    const minutes = Math.floor(time / 60);
+    let seconds = time - (minutes * 60);
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return (`${minutes}:${seconds}`);
+  };
+
   return (
     <Modal
       open={open}
@@ -37,9 +52,9 @@ function QuizModal({
       aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
-        <img src={quiz.img} alt={quiz.title}/>
+        <img src={img} alt={title}/>
         <Typography className='time' gutterBottom variant='h6' component='div'>
-          <QueryBuilderIcon/> {quiz.time / 60000} min.
+          <QueryBuilderIcon/> {showTime()}
         </Typography>
         <div className='info'>
           <Typography
@@ -50,7 +65,7 @@ function QuizModal({
             gutterBottom variant='h5'
             component='div'
           >
-            {quiz.title}
+            {title}
           </Typography>
           <Typography
             sx={{
@@ -59,7 +74,7 @@ function QuizModal({
             }}
             variant='body2'
           >
-            {quiz.description}
+            {description}
           </Typography>
         </div>
         <div className='buttons'>

@@ -13,6 +13,7 @@ function QuizPage() {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
+  const [timeIsUp, setTimeIsUp] = useState(false);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
 
@@ -41,6 +42,7 @@ function QuizPage() {
           setIndex={setIndex}
           score={score}
           setScore={setScore}
+          setTimeIsUp={setTimeIsUp}
         />
       )}
       {isEnded && (
@@ -51,6 +53,7 @@ function QuizPage() {
           setScore={setScore}
           setIsStarted={setIsStarted}
           setIndex={setIndex}
+          timeIsUp={timeIsUp}
         />
       )}
     </main>

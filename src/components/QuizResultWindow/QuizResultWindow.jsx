@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Button, Container, Paper, Typography,
+  Alert,
+  AlertTitle,
+  Button,
+  Container,
+  Paper,
+  Typography,
 } from '@mui/material';
 import './QuizResultWindow.css';
 
@@ -20,6 +25,7 @@ function QuizResultWindow({
   setScore,
   setIsStarted,
   setIndex,
+  timeIsUp,
 }) {
   const crateCongratulationsText = () => {
     if (score < totalQuestions / 2) return 'Keep practicing!';
@@ -54,17 +60,24 @@ function QuizResultWindow({
       <Container className="buttons">
         <Button
           sx={btnStyles}
-          variant='outlined'
+          variant="outlined"
           onClick={() => tryAgain()}
         >
-            Try again
+          Try again
         </Button>
-        <Button sx={btnStyles} variant='outlined'>
+        <Button sx={btnStyles} variant="outlined">
           <Link to="/quizzes">
             Back to quizzes
           </Link>
         </Button>
       </Container>
+
+      {timeIsUp && (
+        <Alert className="alert" severity="error">
+          <AlertTitle><strong>Time is up</strong></AlertTitle>
+          We&apos;re sorry, but you&apos;ve run out of time
+        </Alert>
+      )}
     </Paper>
   );
 }

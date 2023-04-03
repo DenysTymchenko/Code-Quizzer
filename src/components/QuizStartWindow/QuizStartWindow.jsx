@@ -14,6 +14,19 @@ function QuizStartWindow({
   quizData,
   setIsStarted,
 }) {
+  const {
+    title,
+    description,
+    time,
+    questions,
+  } = quizData;
+  const showTime = () => {
+    const minutes = Math.floor(time / 60);
+    let seconds = time - (minutes * 60);
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return (`${minutes}:${seconds}`);
+  };
   const setStarted = () => {
     setIsStarted(true);
   };
@@ -28,17 +41,17 @@ function QuizStartWindow({
       elevation={0}
     >
       <Typography variant="h3" gutterBottom>
-        {quizData.title}
+        {title}
       </Typography>
       <Typography variant="h4">
-        {quizData.description}
+        {description}
       </Typography>
       <Container className='wrapper'>
         <Typography variant="h5">
-          <AssignmentIcon/> {quizData.questions.length}
+          <AssignmentIcon/> {questions.length}
         </Typography>
         <Typography variant="h5">
-          <AccessAlarmIcon/> 5:00
+          <AccessAlarmIcon/> {showTime()}
         </Typography>
       </Container>
       <Button sx={{ color: 'white' }} onClick={setStarted}>
