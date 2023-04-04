@@ -1,0 +1,17 @@
+.quiz-answers {
+  display: flex !important;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.quiz-answers button {
+  text-align: center;
+  color: #252422;
+  background-color: #FEC601;
+  border-color: #252422 !important;
+}
+
+.quiz-answers button:hover {
+  color: white;
+  background-color: #252422;
+}

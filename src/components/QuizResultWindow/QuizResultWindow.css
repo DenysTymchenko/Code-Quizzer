@@ -1,0 +1,51 @@
+.quiz-result-window {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.quiz-result-window .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.quiz-result-window .buttons button {
+  width: 100%;
+}
+
+.quiz-result-window .alert {
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hide 4s ease-in forwards;
+}
+
+.quiz-result-window .alert svg {
+  display: none;
+}
+
+@media screen and (max-width: 675px) {
+  .quiz-result-window {
+    width: fit-content;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

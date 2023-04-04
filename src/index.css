@@ -7,3 +7,21 @@
 html {
     scroll-behavior: smooth;
 }
+
+body {
+  color: #252422;
+  background-color: #FEC601;
+}
+
+.h100vh {
+  height: 100vh;
+}
+
+.mh100vh {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+}

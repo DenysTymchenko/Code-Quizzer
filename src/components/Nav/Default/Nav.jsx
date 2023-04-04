@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import { Button, Drawer, Box, } from '@mui/material';
-import MenuIcon from "@mui/icons-material/Menu";
+import { Button, Drawer, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import '../Nav.css';
-import PagesList from "./PagesList";
+import PagesList from './PagesList';
 
 function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav>
-      <Button 
-        onClick={() => setOpen(true)} 
-        sx={{color: 'white'}}
+      <Button
+        onClick={() => setOpen(true)}
+        sx={{ color: 'white' }}
       >
         <MenuIcon />
       </Button>
-      <Drawer 
+      <Drawer
         anchor='right'
         open={open}
         onClose={() => setOpen(false)}
@@ -34,7 +34,7 @@ function Nav() {
         </Box>
       </Drawer>
     </nav>
-  )
+  );
 }
 
 export default Nav;

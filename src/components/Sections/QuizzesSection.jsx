@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import QuizCard from '../QuizCard/QuizCard';
-import { quizzes } from "../../api";
+import { quizzes } from '../../api';
 
 const h3Styles = {
   textAlign: 'center',
@@ -9,29 +9,25 @@ const h3Styles = {
   '@media (max-width:600px)': {
     fontSize: '2.5rem',
   },
-}
+};
 
 function QuizzesSection() {
-  let [quizzesData, setQuizzesData] = useState([]);
+  const [quizzesData, setQuizzesData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      try {
-        const {data} = await quizzes.fetch();
-        setQuizzesData(data);
-      } catch (e) {
-        console.log(e);
-      }
+      const { data } = await quizzes.fetch();
+      setQuizzesData(data);
     })();
   }, []);
 
   return (
-    <section id='quizzes'>
+    <section id='quizzes' className='mh100vh'>
       <Typography variant='h3' sx={h3Styles}>
         Best way to start
       </Typography>
       <div className='wrapper'>
-        {quizzesData.map(quiz => (
+        {quizzesData.map((quiz) => (
           <QuizCard
             key={quiz.id}
             quiz={quiz}
@@ -39,7 +35,7 @@ function QuizzesSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 export default QuizzesSection;

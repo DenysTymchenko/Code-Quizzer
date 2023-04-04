@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Box,
   Modal,
-  Typography
+  Typography,
 } from '@mui/material/';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import './QuizModal.css'
+import './QuizModal.css';
 
 const style = {
   position: 'absolute',
@@ -25,7 +26,24 @@ const style = {
   paddingBottom: '10px',
 };
 
-function QuizModal({ open, handleClose, quiz, handleStart }) {
+function QuizModal({
+  open, handleClose, quiz, getQuizPath,
+}) {
+  const {
+    img,
+    title,
+    description,
+    time,
+  } = quiz;
+
+  const showTime = () => {
+    const minutes = Math.floor(time / 60);
+    let seconds = time - (minutes * 60);
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return (`${minutes}:${seconds}`);
+  };
+
   return (
     <Modal
       open={open}
@@ -34,19 +52,47 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
       aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
-        <img src={quiz.img} alt={quiz.title}/>
+        <img src={img} alt={title}/>
         <Typography className='time' gutterBottom variant='h6' component='div'>
-          <QueryBuilderIcon/> {quiz.time / 60000} min.
+          <QueryBuilderIcon/> {showTime()}
         </Typography>
         <div className='info'>
-          <Typography gutterBottom variant='h5' component='div'>
-            {quiz.title}
+          <Typography
+            sx={{
+              height: 32,
+              overflow: 'auto',
+            }}
+            gutterBottom variant='h5'
+            component='div'
+          >
+            {title}
           </Typography>
-          <Typography variant='body2'>
-            {quiz.description}
+          <Typography
+            sx={{
+              height: 50,
+              overflow: 'auto',
+            }}
+            variant='body2'
+          >
+            {description}
           </Typography>
         </div>
         <div className='buttons'>
+          <Link to={getQuizPath()}>
+            <Button
+              size="small"
+              variant="outlined"
+              sx={{
+                color: 'white',
+                borderColor: '#F7EC59',
+                '&:hover': {
+                  borderColor: '#FEC601',
+                },
+              }}
+            >
+              Start
+            </Button>
+          </Link>
           <Button
             size='small'
             variant='outlined'
@@ -55,21 +101,7 @@ function QuizModal({ open, handleClose, quiz, handleStart }) {
               borderColor: '#F7EC59',
               '&:hover': {
                 borderColor: '#FEC601',
-              }
-            }}
-            onClick={handleStart}
-          >
-            Start
-          </Button>
-          <Button
-            size='small'
-            variant='outlined'
-            sx={{
-              color: 'white',
-              borderColor: '#F7EC59',
-              '&:hover': {
-                borderColor: '#FEC601',
-              }
+              },
             }}
             onClick={handleClose}
           >

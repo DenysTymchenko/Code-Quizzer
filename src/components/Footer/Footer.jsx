@@ -4,7 +4,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { Typography } from '@mui/material';
-import './Footer.css'
+import './Footer.css';
 
 function Footer() {
   return (
@@ -25,7 +25,7 @@ function Footer() {
         </a>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer;

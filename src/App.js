@@ -1,15 +1,26 @@
 import React from 'react';
-import Header from './components/Header/Header';
+import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import Main from './pages/Main';
+import Header from './components/Header/Header';
+import Main from './pages/Main/Main';
+import Quizzes from './pages/QuizzesPage/QuizzesPage';
+import QuizPage from './pages/QuizPage/QuizPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
-    <div className='App'>
+    <>
       <Header />
-      <Main />
+      <Routes>
+        <Route index element={<Main />} />
+        <Route path='/quizzes' element={<Quizzes />} />
+        <Route path='/quiz/:name' element={<QuizPage />} />
+        <Route path='/favorites' element={<FavoritesPage />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

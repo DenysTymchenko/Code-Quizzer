@@ -1,0 +1,426 @@
+{
+  "quizzes": [
+    {
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png",
+      "title": "JavaScript Quiz",
+      "description": "Quiz, that'll help you to check your JS skills.",
+      "time": 300,
+      "id": "1"
+    },
+    {
+      "img": "https://armyyazilim.com/wp-content/uploads/2019/10/css.png",
+      "title": "CSS Quiz",
+      "description": "Quiz, that'll help you to check your CSS skills.",
+      "time": 150,
+      "id": "2"
+    },
+    {
+      "img": "https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png",
+      "title": "HTML Quiz",
+      "description": "Quiz, that'll help you to check your HTML skills.",
+      "time": 150,
+      "id": "3"
+    }
+  ],
+  "javascript_quiz": {
+    "title": "JavaScript Quiz",
+    "description": "Quiz, that'll help you to check your JS skills.",
+    "time": 300,
+    "questions": [
+      {
+        "question": "Inside which HTML element do we put the JavaScript?",
+        "answers": [
+          {
+            "answer": "<script>",
+            "isCorrect": true
+          },
+          {
+            "answer": "<js>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<scripting>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<javascript>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Where is the correct place to insert a JavaScript?",
+        "answers": [
+          {
+            "answer": "Both the <head> section and the <body> section are correct",
+            "isCorrect": true
+          },
+          {
+            "answer": "The <head> section",
+            "isCorrect": false
+          },
+          {
+            "answer": "The <body> section",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the correct syntax for referring to an external script called \"xxx.js\"?",
+        "answers": [
+          {
+            "answer": "<script src=\"xxx.js\">",
+            "isCorrect": true
+          },
+          {
+            "answer": "<script name=\"xxx.js\">",
+            "isCorrect": false
+          },
+          {
+            "answer": "<script href=\"xxx.js\">",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How do you write \"Hello World\" in an alert box?",
+        "answers": [
+          {
+            "answer": "alert(\"Hello World\");",
+            "isCorrect": true
+          },
+          {
+            "answer": "msgBox(\"Hello World\");",
+            "isCorrect": false
+          },
+          {
+            "answer": "msg(\"Hello World\");",
+            "isCorrect": false
+          },
+          {
+            "answer": "alertBox(\"Hello World\");",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How do you create a function in JavaScript?",
+        "answers": [
+          {
+            "answer": "function myFunction()  ",
+            "isCorrect": true
+          },
+          {
+            "answer": "function = myFunction()\n",
+            "isCorrect": false
+          },
+          {
+            "answer": "function:myFunction()\n",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How do you call a function named \"myFunction\"?",
+        "answers": [
+          {
+            "answer": " myFunction()",
+            "isCorrect": true
+          },
+          {
+            "answer": "call function myFunction()",
+            "isCorrect": false
+          },
+          {
+            "answer": "call myFunction()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How can you add a comment in a JavaScript?",
+        "answers": [
+          {
+            "answer": "//This is a comment",
+            "isCorrect": true
+          },
+          {
+            "answer": "'This is a comment",
+            "isCorrect": false
+          },
+          {
+            "answer": "<!--This is a comment-->",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the correct way to write a JavaScript array?",
+        "answers": [
+          {
+            "answer": "var colors = [\"red\", \"green\", \"blue\"]",
+            "isCorrect": true
+          },
+          {
+            "answer": "var colors = 1 = (\"red\"), 2 = (\"green\"), 3 = (\"blue\")",
+            "isCorrect": false
+          },
+          {
+            "answer": "var colors = (1:\"red\", 2:\"green\", 3:\"blue\")\n",
+            "isCorrect": false
+          },
+          {
+            "answer": "var colors = \"red\", \"green\", \"blue\"",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How do you round the number 7.25, to the nearest integer?",
+        "answers": [
+          {
+            "answer": "Math.round(7.25)",
+            "isCorrect": true
+          },
+          {
+            "answer": "round(7.25)",
+            "isCorrect": false
+          },
+          {
+            "answer": "Math.rnd(7.25)",
+            "isCorrect": false
+          },
+          {
+            "answer": "rnd(7.25)",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How do you find the number with the highest value of x and y?",
+        "answers": [
+          {
+            "answer": "Math.max(x, y)",
+            "isCorrect": true
+          },
+          {
+            "answer": "ceil(x, y)",
+            "isCorrect": false
+          },
+          {
+            "answer": "Math.ceil(x, y)",
+            "isCorrect": false
+          },
+          {
+            "answer": "top(x, y)",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  "html_quiz": {
+    "title": "HTML Quiz",
+    "description": "Quiz, that'll help you to check your HTML skills.",
+    "time": 150,
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "answers": [
+          {
+            "answer": "Hyper Text Markup Language",
+            "isCorrect": true
+          },
+          {
+            "answer": "Hyperlinks and Text Markup Language",
+            "isCorrect": false
+          },
+          {
+            "answer": "Home Tool Markup Language",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Choose the correct HTML element for the largest heading:",
+        "answers": [
+          {
+            "answer": "<h1>",
+            "isCorrect": true
+          },
+          {
+            "answer": "<h6>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<head>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<heading>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the correct HTML element for inserting a line break?",
+        "answers": [
+          {
+            "answer": "<br>",
+            "isCorrect": true
+          },
+          {
+            "answer": "<break>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<lb>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the correct HTML for adding a background color?",
+        "answers": [
+          {
+            "answer": "<body style=\"background-color:yellow;\">",
+            "isCorrect": true
+          },
+          {
+            "answer": "<body bg=\"yellow\">",
+            "isCorrect": false
+          },
+          {
+            "answer": "<background>yellow</background>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Choose the correct HTML element to define important text",
+        "answers": [
+          {
+            "answer": "<strong>",
+            "isCorrect": true
+          },
+          {
+            "answer": "<i>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<b>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<important>",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  "css_quiz": {
+    "title": "CSS Quiz",
+    "description": "Quiz, that'll help you to check your CSS skills.",
+    "time": 150,
+    "questions": [
+      {
+        "question": "What does CSS stand for?",
+        "answers": [
+          {
+            "answer": "Cascading Style Sheets",
+            "isCorrect": true
+          },
+          {
+            "answer": "Colorful Style Sheets",
+            "isCorrect": false
+          },
+          {
+            "answer": "Creative Style Sheets",
+            "isCorrect": false
+          },
+          {
+            "answer": "Computer Style Sheets",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the correct HTML for referring to an external style sheet?",
+        "answers": [
+          {
+            "answer": "<link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\">",
+            "isCorrect": true
+          },
+          {
+            "answer": "<stylesheet>mystyle.css</stylesheet>",
+            "isCorrect": false
+          },
+          {
+            "answer": "<style src=\"mystyle.css\">",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
+        "answers": [
+          {
+            "answer": "In the <head> section",
+            "isCorrect": true
+          },
+          {
+            "answer": "At the end of the document",
+            "isCorrect": false
+          },
+          {
+            "answer": "In the <body> section",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which is the correct CSS syntax?",
+        "answers": [
+          {
+            "answer": "body {color: black;}",
+            "isCorrect": true
+          },
+          {
+            "answer": "{body;color:black;}",
+            "isCorrect": false
+          },
+          {
+            "answer": "{body:color=black;}\n",
+            "isCorrect": false
+          },
+          {
+            "answer": "body:color=black;",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which CSS property controls the text size?\n",
+        "answers": [
+          {
+            "answer": "font-size",
+            "isCorrect": true
+          },
+          {
+            "answer": "font-style",
+            "isCorrect": false
+          },
+          {
+            "answer": "text-size",
+            "isCorrect": false
+          },
+          {
+            "answer": "text-style",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+}

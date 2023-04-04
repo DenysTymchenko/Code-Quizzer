@@ -1,33 +1,26 @@
 import React from 'react';
-import CodeIcon from '@mui/icons-material/Code';
+import { Link } from 'react-router-dom';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { Typography, useMediaQuery } from '@mui/material';
 import Nav from '../Nav/Default/Nav';
 import NavMobile from '../Nav/Mobile/NavMobile';
-import './Header.css'
-
+import './Header.css';
 
 function Header() {
   const isBigScreen = useMediaQuery('(min-width:625px)');
 
   return (
     <header>
-      <div className='logo'>
-        <Typography 
-          variant='h5' 
-          sx={{
-            display:'flex', 
-            alignItems:'center',
-            gap: '5px',
-          }}
-        >
-          Code
-          <CodeIcon />
-          Quizzer
-        </Typography>
-      </div>
+      <Link to='/'>
+        <div className="logo">
+          <Typography variant="h5">
+            C<AccessAlarmIcon/>de Quizzer
+          </Typography>
+        </div>
+      </Link>
       {isBigScreen ? <Nav /> : <NavMobile />}
     </header>
-  )
+  );
 }
 
 export default Header;

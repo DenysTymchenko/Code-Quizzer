@@ -1,0 +1,38 @@
+.greetings {
+  position: relative;
+}
+
+.greetings video {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+}
+
+.greetings .wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.greetings .wrapper a {
+  color: #252422;
+}
+
+#quizzes {
+  position: relative;
+  padding: 35px;
+}
+
+#quizzes .wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
