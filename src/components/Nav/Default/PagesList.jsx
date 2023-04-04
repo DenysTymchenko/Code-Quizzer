@@ -23,7 +23,7 @@ function PagesList() {
         <Link key={page} to={links[index]}>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon sx={{ color: 'white' }}>
+              <ListItemIcon sx={{ color: 'var(--secondary-alt)' }}>
                 {icons[index]}
               </ListItemIcon>
               <ListItemText primary={page} />

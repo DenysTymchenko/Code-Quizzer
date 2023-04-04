@@ -52,9 +52,9 @@ function QuizModal({
       aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
-        <img src={img} alt={title}/>
+        <img src={img} alt={title} />
         <Typography className='time' gutterBottom variant='h6' component='div'>
-          <QueryBuilderIcon/> {showTime()}
+          <QueryBuilderIcon /> {showTime()}
         </Typography>
         <div className='info'>
           <Typography
@@ -78,29 +78,27 @@ function QuizModal({
           </Typography>
         </div>
         <div className='buttons'>
-          <Link to={getQuizPath()}>
-            <Button
-              size="small"
-              variant="outlined"
-              sx={{
-                color: 'white',
-                borderColor: '#F7EC59',
-                '&:hover': {
-                  borderColor: '#FEC601',
-                },
-              }}
-            >
-              Start
-            </Button>
-          </Link>
+          <Button
+            size="small"
+            variant="outlined"
+            sx={{
+              color: 'white',
+              borderColor: 'var(--main-alt)',
+              '&:hover': {
+                borderColor: 'var(--main)',
+              },
+            }}
+          >
+            <Link to={getQuizPath()}>Start</Link>
+          </Button>
           <Button
             size='small'
             variant='outlined'
             sx={{
               color: 'white',
-              borderColor: '#F7EC59',
+              borderColor: 'var(--main-alt)',
               '&:hover': {
-                borderColor: '#FEC601',
+                borderColor: 'var(--main)',
               },
             }}
             onClick={handleClose}

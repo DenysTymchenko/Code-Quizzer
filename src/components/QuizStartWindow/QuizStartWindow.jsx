@@ -20,6 +20,7 @@ function QuizStartWindow({
     time,
     questions,
   } = quizData;
+
   const showTime = () => {
     const minutes = Math.floor(time / 60);
     let seconds = time - (minutes * 60);
@@ -27,6 +28,7 @@ function QuizStartWindow({
 
     return (`${minutes}:${seconds}`);
   };
+
   const setStarted = () => {
     setIsStarted(true);
   };
@@ -34,8 +36,8 @@ function QuizStartWindow({
   return (
     <Paper
       sx={{
-        color: 'white',
-        backgroundColor: '#252422',
+        color: 'var(--secondary-alt)',
+        backgroundColor: 'var(--secondary)',
       }}
       className="quiz-start-window"
       elevation={0}
@@ -54,7 +56,7 @@ function QuizStartWindow({
           <AccessAlarmIcon/> {showTime()}
         </Typography>
       </Container>
-      <Button sx={{ color: 'white' }} onClick={setStarted}>
+      <Button sx={{ color: 'var(--secondary-alt)' }} onClick={setStarted}>
         <PlayCircleFilledIcon />
       </Button>
     </Paper>

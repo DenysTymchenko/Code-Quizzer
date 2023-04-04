@@ -28,7 +28,7 @@ function QuizAnswers({
       <ButtonGroup
         sx={{
           width: '75%',
-          border: '3px solid #252422',
+          border: '3px solid var(--secondary)',
         }}
         orientation="vertical"
         aria-label="vertical contained button group"

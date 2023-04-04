@@ -11,7 +11,7 @@ function Nav() {
     <nav>
       <Button
         onClick={() => setOpen(true)}
-        sx={{ color: 'white' }}
+        sx={{ color: 'var(--secondary-alt)' }}
       >
         <MenuIcon />
       </Button>
@@ -26,8 +26,8 @@ function Nav() {
           onKeyDown={() => setOpen(false)}
           sx={{
             height: '100%',
-            backgroundColor: '#252422',
-            color: 'white',
+            backgroundColor: 'var(--secondary)',
+            color: 'var(--secondary-alt)',
           }}
         >
             <PagesList />

@@ -1,3 +1,10 @@
+:root {
+  --main: #FEC601;
+  --main-alt: #F7EC59;
+  --secondary: #252422;
+  --secondary-alt: #FFFFFF;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,8 +16,8 @@ html {
 }
 
 body {
-  color: #252422;
-  background-color: #FEC601;
+  color: var(--secondary);
+  background-color: var(--main);
 }
 
 .h100vh {

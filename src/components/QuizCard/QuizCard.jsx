@@ -12,9 +12,9 @@ import QuizModal from '../QuizModal/QuizModal';
 
 const btnStyles = {
   color: 'white',
-  borderColor: '#F7EC59',
+  borderColor: 'var(--main-alt)',
   '&:hover': {
-    borderColor: '#FEC601',
+    borderColor: 'var(--main)',
   },
 };
 
@@ -34,8 +34,8 @@ function QuizCard({ quiz }) {
       />
       <CardContent
         sx={{
-          backgroundColor: '#252422',
-          color: 'white',
+          backgroundColor: 'var(--secondary)',
+          color: 'var(--secondary-alt)',
           textAlign: 'center',
         }}>
         <Typography
@@ -62,7 +62,7 @@ function QuizCard({ quiz }) {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          backgroundColor: '#252422',
+          backgroundColor: 'var(--secondary)',
         }}
       >
         <Link to={getQuizPath()}>

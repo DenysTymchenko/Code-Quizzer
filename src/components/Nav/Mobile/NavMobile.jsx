@@ -33,7 +33,7 @@ function NavMobile() {
         aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ color: 'white' }}
+        sx={{ color: 'var(--secondary-alt)' }}
       >
         <MenuIcon />
       </Button>
@@ -47,7 +47,7 @@ function NavMobile() {
         }}
         PaperProps={{
           style: {
-            backgroundColor: '#252422',
+            backgroundColor: 'var(--secondary)',
             color: 'white',
           },
         }}

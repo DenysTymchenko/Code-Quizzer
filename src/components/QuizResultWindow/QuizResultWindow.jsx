@@ -12,9 +12,9 @@ import './QuizResultWindow.css';
 
 const btnStyles = {
   color: 'white',
-  borderColor: '#F7EC59',
+  borderColor: 'var(--main-alt)',
   '&:hover': {
-    borderColor: '#FEC601',
+    borderColor: 'var(--main)',
   },
 };
 
@@ -45,8 +45,8 @@ function QuizResultWindow({
     <Paper
       className="quiz-result-window"
       sx={{
-        color: 'white',
-        backgroundColor: '#252422',
+        color: 'var(--secondary-alt)',
+        backgroundColor: 'var(--secondary)',
       }}
       elevation={0}
     >

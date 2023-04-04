@@ -6,12 +6,12 @@
 
 .quiz-answers button {
   text-align: center;
-  color: #252422;
-  background-color: #FEC601;
-  border-color: #252422 !important;
+  color: var(--secondary);
+  background-color: var(--main);
+  border-color: var(--secondary) !important;
 }
 
 .quiz-answers button:hover {
-  color: white;
-  background-color: #252422;
+  color: var(--secondary-alt);
+  background-color: var(--secondary);
 }

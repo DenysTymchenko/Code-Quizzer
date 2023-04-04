@@ -15,7 +15,7 @@ img {
   justify-content: flex-end;
   align-items: center;
   gap: 5px;
-  color: #252422;
+  color: var(--secondary);
 }
 
 .info {

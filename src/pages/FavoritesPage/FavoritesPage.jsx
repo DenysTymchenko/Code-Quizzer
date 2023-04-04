@@ -12,20 +12,20 @@ const h3Styles = {
 const SearchBar = styled(TextField)({
   width: '500px',
   '& label.Mui-focused': {
-    color: '#252422',
+    color: 'var(--secondary)',
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: '#252422',
+    borderBottomColor: 'var(--secondary)',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: '#C39801',
+      borderColor: '#var(--main-alt)',
     },
     '&:hover fieldset': {
-      borderColor: '#252422',
+      borderColor: 'var(--secondary)',
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#252422',
+      borderColor: 'var(--secondary)',
     },
   },
   '@media (max-width:600px)': {
