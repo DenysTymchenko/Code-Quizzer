@@ -16,3 +16,9 @@
   align-items: center;
   gap: 5px;
 }
+
+@media screen and (max-width: 925px) {
+  .quiz-header {
+    flex-direction: column;
+  }
+}
