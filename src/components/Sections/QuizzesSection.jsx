@@ -22,13 +22,15 @@ function QuizzesSection() {
     })();
   }, []);
 
+  const mainPageQuizzes = quizzes.slice(0, 3);
+
   return (
     <section id='quizzes' className='mh100vh'>
       <Typography variant='h3' sx={h3Styles}>
         Best way to start
       </Typography>
       <div className='wrapper'>
-        {quizzes.map((quiz) => (
+        {mainPageQuizzes.map((quiz) => (
           <QuizCard
             key={quiz.id}
             quiz={quiz}
