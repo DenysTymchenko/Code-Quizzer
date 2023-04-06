@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { styled, Typography, TextField } from '@mui/material';
 import './QuizzesPage.css';
-import { quizzes } from '../../api';
 import QuizCard from '../../components/QuizCard/QuizCard';
+import { quizzesThunks } from '../../store/modules/quizzes';
 
 const h3Styles = {
   textAlign: 'center',
@@ -36,13 +37,14 @@ const SearchBar = styled(TextField)({
 });
 
 function QuizzesPage() {
+  const { quizzes } = useSelector((state) => state.quizzesReducer);
+  const dispatch = useDispatch();
   const [query, setQuery] = useState('');
-  const [quizzesData, setQuizzesData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const { data } = query ? await quizzes.queryFetch(query) : await quizzes.fetch();
-      setQuizzesData(data);
+      // eslint-disable-next-line no-unused-expressions
+      query ? await dispatch(quizzesThunks.fetchQuizzesQuery(query)) : await dispatch(quizzesThunks.fetchQuizzes());
     })();
   }, [query]);
 
@@ -63,7 +65,7 @@ function QuizzesPage() {
         onChange={(e) => handleQuery(e.target.value)}
       />
       <section className='quizzes'>
-        {quizzesData.map((quiz) => (
+        {quizzes.map((quiz) => (
           <QuizCard
             key={quiz.id}
             quiz={quiz}

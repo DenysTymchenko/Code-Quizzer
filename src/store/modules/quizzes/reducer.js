@@ -12,7 +12,9 @@ const quizzesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(thunks.fetchQuizzes.fulfilled, (state, { payload }) => {
       state.quizzes = payload;
-      console.log(state.quizzes);
+    });
+    builder.addCase(thunks.fetchQuizzesQuery.fulfilled, (state, { payload }) => {
+      state.quizzes = payload;
     });
   },
 });

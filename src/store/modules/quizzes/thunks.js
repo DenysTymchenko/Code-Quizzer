@@ -7,6 +7,12 @@ const fetchQuizzes = createAsyncThunk(`${moduleName}/fetchQuizzes`, async () => 
   return data;
 });
 
+const fetchQuizzesQuery = createAsyncThunk(`${moduleName}/fetchQuizzes()`, async (query) => {
+  const { data } = await quizzes.queryFetch(query);
+  return data;
+});
+
 export default {
   fetchQuizzes,
+  fetchQuizzesQuery,
 };
