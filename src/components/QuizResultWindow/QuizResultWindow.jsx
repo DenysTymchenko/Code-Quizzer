@@ -9,6 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import './QuizResultWindow.css';
+import { useSelector } from 'react-redux';
 
 const btnStyles = {
   color: 'white',
@@ -18,25 +19,17 @@ const btnStyles = {
   },
 };
 
-function QuizResultWindow({
-  score,
-  totalQuestions,
-  setIsEnded,
-  setScore,
-  setIsStarted,
-  setIndex,
-  timeIsUp,
-}) {
+function QuizResultWindow({ setIsEnded, setIsStarted, timeIsUp }) {
+  const { score, questions } = useSelector((state) => state.quizReducer);
+
   const crateCongratulationsText = () => {
-    if (score < totalQuestions / 2) return 'Keep practicing!';
-    if (score === totalQuestions / 2) return 'Nice one!';
-    if (score > totalQuestions / 2 && score !== totalQuestions) return 'Good job!';
-    if (score === totalQuestions) return 'Perfect!';
+    if (score < questions.length / 2) return 'Keep practicing!';
+    if (score === questions.length / 2) return 'Nice one!';
+    if (score > questions.length / 2 && score !== questions.length / 2) return 'Good job!';
+    if (score === questions.length / 2) return 'Perfect!';
   };
 
   const tryAgain = () => {
-    setScore(0);
-    setIndex(0);
     setIsStarted(false);
     setIsEnded(false);
   };
@@ -54,7 +47,7 @@ function QuizResultWindow({
         {crateCongratulationsText()}
       </Typography>
       <Typography variant="h3" gutterBottom>
-        {score} / {totalQuestions}
+        {score} / {questions.length}
       </Typography>
 
       <Container className="buttons">

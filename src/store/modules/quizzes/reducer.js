@@ -20,4 +20,3 @@ const quizzesSlice = createSlice({
 });
 
 export default quizzesSlice.reducer;
-export const { fetch } = quizzesSlice.actions;

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Container, Typography } from '@mui/material';
 import './QuizQuestion.css';
 
-function QuizQuestion({ question }) {
+function QuizQuestion() {
+  const { questions, index } = useSelector((state) => state.quizReducer);
+
   return (
     <Container className="quiz-question">
       <Typography
@@ -10,7 +13,7 @@ function QuizQuestion({ question }) {
         variant="h4"
         gutterBottom
       >
-        {question}
+        {questions[index].question}
       </Typography>
     </Container>
   );
