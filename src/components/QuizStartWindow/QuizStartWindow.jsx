@@ -9,19 +9,18 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import './QuizStartWindow.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { nullifyScore, nullifyIndex, setTime } from '../../store/modules/quiz/reducer';
 
-function QuizStartWindow({
-  quizData,
-  setIsStarted,
-}) {
-  const {
-    title,
-    description,
-    time,
-    questions,
-  } = quizData;
+function QuizStartWindow({ setIsStarted }) {
+  const { quiz, time, questions } = useSelector((state) => state.quizReducer);
+  const dispatch = useDispatch();
+  dispatch(nullifyScore());
+  dispatch(nullifyIndex());
 
   const showTime = () => {
+    dispatch(setTime());
+
     const minutes = Math.floor(time / 60);
     let seconds = time - (minutes * 60);
     seconds = seconds < 10 ? `0${seconds}` : seconds;
@@ -43,10 +42,10 @@ function QuizStartWindow({
       elevation={0}
     >
       <Typography variant="h3" gutterBottom>
-        {title}
+        {quiz.title}
       </Typography>
       <Typography variant="h4">
-        {description}
+        {quiz.description}
       </Typography>
       <Container className='wrapper'>
         <Typography variant="h5">

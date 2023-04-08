@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import QuizCard from '../QuizCard/QuizCard';
-import { quizzes } from '../../api';
+import { quizzesThunks } from '../../store/modules/quizzes';
 
 const h3Styles = {
   textAlign: 'center',
@@ -12,14 +13,16 @@ const h3Styles = {
 };
 
 function QuizzesSection() {
-  const [quizzesData, setQuizzesData] = useState([]);
+  const { quizzes } = useSelector((state) => state.quizzesReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
-      const { data } = await quizzes.fetch();
-      setQuizzesData(data);
+      await dispatch(quizzesThunks.fetchQuizzes());
     })();
   }, []);
+
+  const mainPageQuizzes = quizzes.slice(0, 3);
 
   return (
     <section id='quizzes' className='mh100vh'>
@@ -27,7 +30,7 @@ function QuizzesSection() {
         Best way to start
       </Typography>
       <div className='wrapper'>
-        {quizzesData.map((quiz) => (
+        {mainPageQuizzes.map((quiz) => (
           <QuizCard
             key={quiz.id}
             quiz={quiz}
