@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonGroup, Container } from '@mui/material';
 import './QuizAnswers.css';
-import { appendIndex, appendScore } from '../../../store/modules/quiz/reducer';
+import { appendIndex, appendScore, setAnswers } from '../../../store/modules/quiz/reducer';
 
 function QuizAnswers({ setIsEnded }) {
   const { questions, answers, index } = useSelector((state) => state.quizReducer);
@@ -10,12 +10,13 @@ function QuizAnswers({ setIsEnded }) {
 
   const acceptAnswer = (answer) => {
     dispatch(appendIndex());
+
     if (answer.isCorrect) {
       dispatch(appendScore());
     }
-    if (index + 1 === questions.length) {
-      setIsEnded(true);
-    }
+
+    // eslint-disable-next-line no-unused-expressions
+    index + 1 !== questions.length ? dispatch(setAnswers()) : setIsEnded(true);
   };
 
   return (
