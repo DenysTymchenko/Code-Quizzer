@@ -1,0 +1,44 @@
+.card {
+  width: 325px; 
+  height: fit-content;
+}
+
+.card > .img {
+  position: relative;
+  height: 300px;
+}
+
+.card > .img > * {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+  color: var(--secondary-alt);
+  background-color: var(--secondary);
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.card > .info {
+  background-color: var(--secondary);
+  color: var(--secondary-alt);
+  text-align: center;
+}
+
+.card > .info > .title {
+  height: 32px;
+  overflow: auto;
+}
+
+.card > .info > .description {
+  height: 50;
+  overflow: auto;
+}
+
+.card > .buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary);
+}

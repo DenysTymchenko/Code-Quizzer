@@ -22,7 +22,7 @@ function QuizPage() {
     (async () => {
       await dispatch(quizThunks.fetchQuiz(name));
       dispatch(setQuestions());
-      dispatch(setAnswers());
+      dispatch(setAnswers()); // We need it to update first answers options, if we starting new quiz or starting it again.
     })();
   }, []);
 

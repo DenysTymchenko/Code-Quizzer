@@ -8,7 +8,9 @@ import {
   Button,
   Typography,
 } from '@mui/material';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import QuizModal from '../QuizModal/QuizModal';
+import './QuizCard.css';
 
 const btnStyles = {
   color: 'white',
@@ -26,23 +28,17 @@ function QuizCard({ quiz }) {
   const getQuizPath = () => `/quiz/${quiz.title.replaceAll(' ', '_').toLowerCase()}`;
 
   return (
-    <Card sx={{ width: 325, height: 'fit-content' }}>
+    <Card className='card'>
       <CardMedia
-        sx={{ height: 300 }}
+        className='img'
         image={quiz.img}
         title={quiz.title}
-      />
-      <CardContent
-        sx={{
-          backgroundColor: 'var(--secondary)',
-          color: 'var(--secondary-alt)',
-          textAlign: 'center',
-        }}>
+      >
+        <StarOutlineIcon />
+      </CardMedia>
+      <CardContent className='info'>
         <Typography
-          sx={{
-            height: 32,
-            overflow: 'auto',
-          }}
+          className='title'
           gutterBottom
           variant="h5"
           component="div"
@@ -50,21 +46,13 @@ function QuizCard({ quiz }) {
           {quiz.title}
         </Typography>
         <Typography
-          sx={{
-            height: 50,
-            overflow: 'auto',
-          }}
-          variant="body2">
+          className='description'
+          variant="body2"
+        >
           {quiz.description}
         </Typography>
       </CardContent>
-      <CardActions
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          backgroundColor: 'var(--secondary)',
-        }}
-      >
+      <CardActions className='buttons-wrapper'>
         <Link to={getQuizPath()}>
           <Button
             size="small"
