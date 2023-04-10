@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Card,
   CardActions,
@@ -9,6 +10,8 @@ import {
   Typography,
 } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import { addToFavorites, removeFromFavorites } from '../../store/modules/favorites/reducer';
 import QuizModal from '../QuizModal/QuizModal';
 import './QuizCard.css';
 
@@ -21,10 +24,19 @@ const btnStyles = {
 };
 
 function QuizCard({ quiz }) {
-  const [open, setOpen] = React.useState(false);
+  const { favorites } = useSelector((state) => state.favoritesReducer);
+  const dispatch = useDispatch();
+
+  const [open, setOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(favorites.find((favQuiz) => favQuiz.id === quiz.id));
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  function setFavorite() {
+    // eslint-disable-next-line no-unused-expressions
+    isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
+    setIsFavorite(!isFavorite);
+  }
   const getQuizPath = () => `/quiz/${quiz.title.replaceAll(' ', '_').toLowerCase()}`;
 
   return (
@@ -34,7 +46,7 @@ function QuizCard({ quiz }) {
         image={quiz.img}
         title={quiz.title}
       >
-        <StarOutlineIcon />
+        { isFavorite ? <StarIcon onClick={setFavorite} /> : <StarOutlineIcon onClick={setFavorite} /> }
       </CardMedia>
       <CardContent className='info'>
         <Typography

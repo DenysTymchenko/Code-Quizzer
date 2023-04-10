@@ -52,10 +52,7 @@ const quizSlice = createSlice({
 export default quizSlice.reducer;
 export const {
   setQuestions,
-  setQuestion,
   setAnswers,
-  setAnswer,
-  setRightAnswer,
   setTime,
   appendScore,
   nullifyScore,
