@@ -40,11 +40,8 @@ const quizSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(thunks.fetchQuiz.fulfilled, (state, { payload }) => {
-      state.quiz = payload;
-
-      if (Object.keys(state.quiz).length === 0) {
-        state.quizExists = false;
-      }
+      // eslint-disable-next-line no-unused-expressions
+      payload ? state.quiz = payload : state.quizExists = false;
     });
   },
 });

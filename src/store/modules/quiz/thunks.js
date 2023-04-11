@@ -3,8 +3,12 @@ import { moduleName } from './constant';
 import { quiz } from '../../../api';
 
 const fetchQuiz = createAsyncThunk(`${moduleName}/fetchQuiz`, async (name) => {
-  const { data } = await quiz.fetch(name);
-  return data;
+  try {
+    const { data } = await quiz.fetch(name);
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 export default {
