@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, Typography, TextField } from '@mui/material';
 import './FavoritesPage.css';
+import { useSelector } from 'react-redux';
+import QuizCard from '../../components/QuizCard/QuizCard';
 
 const h3Styles = {
   textAlign: 'center',
@@ -34,6 +36,15 @@ const SearchBar = styled(TextField)({
 });
 
 function FavoritePage() {
+  const { favorites } = useSelector((state) => state.favoritesReducer);
+
+  const [query, setQuery] = useState('');
+  const handleQuery = (input) => {
+    setQuery(input);
+  };
+
+  const favQuizzes = query ? favorites.filter((favQuiz) => favQuiz.title.toLowerCase().indexOf(query) !== -1) : favorites;
+
   return (
     <main className='favorites-page mh100vh'>
       <Typography variant='h3' sx={h3Styles}>
@@ -44,8 +55,16 @@ function FavoritePage() {
         label="Looking for a specific one?"
         placeholder='Search for it!'
         variant="outlined"
+        onChange={(e) => handleQuery(e.target.value)}
       />
-      <section className='favorites'></section>
+      <section className='favorites'>
+        {favQuizzes.map((favQuiz) => (
+          <QuizCard
+            key={favQuiz.id}
+            quiz={favQuiz}
+          />
+        ))}
+      </section>
     </main>
   );
 }

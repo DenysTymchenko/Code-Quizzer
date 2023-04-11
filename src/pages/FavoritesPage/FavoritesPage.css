@@ -6,3 +6,11 @@
   gap: 25px;
   padding: 35px;
 }
+
+.favorites-page .favorites {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
