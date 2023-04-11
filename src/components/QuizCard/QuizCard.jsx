@@ -28,10 +28,10 @@ function QuizCard({ quiz }) {
   const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(favorites.find((favQuiz) => favQuiz.id === quiz.id));
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [isFavorite, setIsFavorite] = useState(favorites.find((favQuiz) => favQuiz.id === quiz.id));
   function setFavorite() {
     // eslint-disable-next-line no-unused-expressions
     isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
@@ -46,7 +46,7 @@ function QuizCard({ quiz }) {
         image={quiz.img}
         title={quiz.title}
       >
-        { isFavorite ? <StarIcon onClick={setFavorite} /> : <StarOutlineIcon onClick={setFavorite} /> }
+        {isFavorite ? <StarIcon onClick={setFavorite} /> : <StarOutlineIcon onClick={setFavorite} />}
       </CardMedia>
       <CardContent className='info'>
         <Typography
@@ -87,6 +87,8 @@ function QuizCard({ quiz }) {
         open={open}
         handleClose={handleClose}
         quiz={quiz}
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
         getQuizPath={getQuizPath}
       />
     </Card>

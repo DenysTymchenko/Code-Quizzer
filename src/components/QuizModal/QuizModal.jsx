@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   Button,
   Box,
@@ -7,6 +8,9 @@ import {
   Typography,
 } from '@mui/material/';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import { addToFavorites, removeFromFavorites } from '../../store/modules/favorites/reducer';
 import './QuizModal.css';
 
 const style = {
@@ -27,7 +31,12 @@ const style = {
 };
 
 function QuizModal({
-  open, handleClose, quiz, getQuizPath,
+  open,
+  handleClose,
+  quiz,
+  isFavorite,
+  setIsFavorite,
+  getQuizPath,
 }) {
   const {
     img,
@@ -35,6 +44,14 @@ function QuizModal({
     description,
     time,
   } = quiz;
+
+  const dispatch = useDispatch();
+
+  function setFavorite() {
+    // eslint-disable-next-line no-unused-expressions
+    isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
+    setIsFavorite(!isFavorite);
+  }
 
   const showTime = () => {
     const minutes = Math.floor(time / 60);
@@ -51,11 +68,14 @@ function QuizModal({
       aria-labelledby='modal-modal-title'
       aria-describedby='modal-modal-description'
     >
-      <Box sx={style}>
+      <Box className='modal' sx={style}>
         <img src={img} alt={title} />
-        <Typography className='time' gutterBottom variant='h6' component='div'>
-          <QueryBuilderIcon /> {showTime()}
-        </Typography>
+        <div className='wrapper'>
+          {isFavorite ? <StarIcon onClick={setFavorite} /> : <StarOutlineIcon onClick={setFavorite} />}
+          <Typography className='time' gutterBottom variant='h6' component='div'>
+            <QueryBuilderIcon /> {showTime()}
+          </Typography>
+        </div>
         <div className='info'>
           <Typography
             sx={{
