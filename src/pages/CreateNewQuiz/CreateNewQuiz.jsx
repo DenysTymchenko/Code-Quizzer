@@ -1,56 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {
-  styled,
-  TextField,
-  Typography,
-  Button,
-} from '@mui/material';
+import { Typography, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { h3Styles, formBtnStyles } from '../../mui-customs/custom-styles';
+import { Input } from '../../mui-customs/custom-elements';
 import './CreateNewQuiz.css';
-
-const h3Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '2.5rem',
-  },
-};
-
-const btnStyles = {
-  color: 'var(--secondary)',
-  backgroundColor: 'var(--main-alt)',
-  '&:hover': {
-    backgroundColor: 'var(--main)',
-  },
-};
-
-const Input = styled(TextField)({
-  width: '500px',
-  '& label': {
-    color: 'var(--main-alt)',
-  },
-  '& label.Mui-focused': {
-    color: 'var(--main-alt)',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'var(--main)',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'var(--main-alt)',
-    },
-    '&:hover fieldset': {
-      borderColor: 'var(--main)',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: 'var(--main-alt)',
-    },
-  },
-  '@media (max-width:600px)': {
-    width: '300px',
-  },
-});
 
 function CreateNewQuiz() {
   const {
@@ -81,7 +36,6 @@ function CreateNewQuiz() {
     questionsUpdated[index] = value;
     setQuestions(questionsUpdated);
   };
-  console.log(questions);
 
   return (
     <main className='create-new-quiz mh100vh'>
@@ -112,7 +66,7 @@ function CreateNewQuiz() {
           <Typography variant='h4'>
             Questions:
           </Typography>
-          <Button variant="contained" sx={btnStyles} onClick={addQuestion}>
+          <Button variant="contained" sx={formBtnStyles} onClick={addQuestion}>
             <AddIcon />
           </Button>
         </div>
@@ -131,7 +85,7 @@ function CreateNewQuiz() {
             />
             <Button
               variant="contained"
-              sx={btnStyles}
+              sx={formBtnStyles}
               onClick={() => removeQuestion(index)}>
               <RemoveIcon />
             </Button>

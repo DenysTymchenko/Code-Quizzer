@@ -29,6 +29,7 @@ body {
 }
 
 a {
+  color: var(--secondary-alt);
   text-decoration: none;
   margin: 0;
 }

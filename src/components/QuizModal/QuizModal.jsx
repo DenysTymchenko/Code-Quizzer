@@ -11,24 +11,8 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 import { addToFavorites, removeFromFavorites } from '../../store/modules/favorites/reducer';
+import { modalStyles, btnStyles } from '../../mui-customs/custom-styles';
 import './QuizModal.css';
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 300,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  textAlign: 'center',
-  bgcolor: '#252422',
-  color: 'white',
-  border: '2px solid #000',
-  boxShadow: 24,
-  paddingBottom: '10px',
-};
 
 function QuizModal({
   open,
@@ -68,7 +52,7 @@ function QuizModal({
       aria-labelledby='modal-modal-title'
       aria-describedby='modal-modal-description'
     >
-      <Box className='modal' sx={style}>
+      <Box className='modal' sx={modalStyles}>
         <img src={img} alt={title} />
         <div className='wrapper'>
           {isFavorite ? <StarIcon onClick={setFavorite} /> : <StarOutlineIcon onClick={setFavorite} />}
@@ -78,20 +62,14 @@ function QuizModal({
         </div>
         <div className='info'>
           <Typography
-            sx={{
-              height: 32,
-              overflow: 'auto',
-            }}
+            sx={{ height: 32 }}
             gutterBottom variant='h5'
             component='div'
           >
             {title}
           </Typography>
           <Typography
-            sx={{
-              height: 50,
-              overflow: 'auto',
-            }}
+            sx={{ height: 50 }}
             variant='body2'
           >
             {description}
@@ -101,26 +79,14 @@ function QuizModal({
           <Button
             size="small"
             variant="outlined"
-            sx={{
-              color: 'white',
-              borderColor: 'var(--main-alt)',
-              '&:hover': {
-                borderColor: 'var(--main)',
-              },
-            }}
+            sx={btnStyles}
           >
             <Link to={getQuizPath()}>Start</Link>
           </Button>
           <Button
             size='small'
             variant='outlined'
-            sx={{
-              color: 'white',
-              borderColor: 'var(--main-alt)',
-              '&:hover': {
-                borderColor: 'var(--main)',
-              },
-            }}
+            sx={btnStyles}
             onClick={handleClose}
           >
             Close

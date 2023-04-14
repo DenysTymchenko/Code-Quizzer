@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
   Alert,
   AlertTitle,
@@ -8,16 +9,8 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
+import { btnStyles } from '../../mui-customs/custom-styles';
 import './QuizResultWindow.css';
-import { useSelector } from 'react-redux';
-
-const btnStyles = {
-  color: 'white',
-  borderColor: 'var(--main-alt)',
-  '&:hover': {
-    borderColor: 'var(--main)',
-  },
-};
 
 function QuizResultWindow({ setIsEnded, setIsStarted, timeIsUp }) {
   const { score, questions } = useSelector((state) => state.quizReducer);

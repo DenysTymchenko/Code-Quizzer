@@ -1,4 +1,4 @@
-footer{
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,6 @@ footer{
   padding: 10px 0;
 }
 
-a {
-  color: var(--secondary-alt);
-  margin-left: 10px !important;
+footer a {
+  margin-left: 10px;
 }
