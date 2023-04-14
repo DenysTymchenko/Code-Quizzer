@@ -9,6 +9,7 @@ import QuizPage from './pages/QuizPage/QuizPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import NotFound from './pages/NotFound/NotFound';
 import { getFavorites } from './store/modules/favorites/reducer';
+import CreateNewQuiz from './pages/CreateNewQuiz/CreateNewQuiz';
 
 function App() {
   const { favorites } = useSelector((state) => state.favoritesReducer);
@@ -29,6 +30,7 @@ function App() {
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/quiz/:name" element={<QuizPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/create" element={<CreateNewQuiz />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
