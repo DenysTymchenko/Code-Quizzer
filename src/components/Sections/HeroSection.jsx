@@ -17,9 +17,9 @@ const h2Styles = {
   },
 };
 
-function GreetingsSection() {
+function HeroSection() {
   return (
-    <section className='greetings h100vh'>
+    <section className='hero h100vh'>
       <video src='./assets/videoBg.mp4' autoPlay loop muted></video>
       <div className='wrapper'>
         <Typography variant='h1' gutterBottom sx={h1Styles}>
@@ -36,4 +36,4 @@ function GreetingsSection() {
   );
 }
 
-export default GreetingsSection;
+export default HeroSection;

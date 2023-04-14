@@ -1,14 +1,14 @@
-.greetings {
+.hero {
   position: relative;
 }
 
-.greetings video {
+.hero video {
   width: 100%;
   height: inherit;
   object-fit: cover;
 }
 
-.greetings .wrapper {
+.hero .wrapper {
   height: 100%;
   width: 100%;
   display: flex;
@@ -20,13 +20,17 @@
   top: 0;
 }
 
-.greetings .wrapper a {
+.hero .wrapper a {
   color: var(--secondary);
 }
 
 #quizzes {
   position: relative;
   padding: 35px;
+}
+
+#quizzes h3 {
+  margin-bottom: 25px;
 }
 
 #quizzes .wrapper {
