@@ -7,9 +7,10 @@ import Main from './pages/Main/Main';
 import Quizzes from './pages/QuizzesPage/QuizzesPage';
 import QuizPage from './pages/QuizPage/QuizPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import CreateNewQuiz from './pages/CreateNewQuiz/CreateNewQuiz';
+import KonamiCode from './pages/KonamiCode/KonamiCode';
 import NotFound from './pages/NotFound/NotFound';
 import { getFavorites } from './store/modules/favorites/reducer';
-import CreateNewQuiz from './pages/CreateNewQuiz/CreateNewQuiz';
 
 function App() {
   const { favorites } = useSelector((state) => state.favoritesReducer);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/quiz/:name" element={<QuizPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/create" element={<CreateNewQuiz />} />
+        <Route path="/konami" element={<KonamiCode />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
