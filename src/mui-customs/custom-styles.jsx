@@ -1,3 +1,18 @@
+export const h1Styles = {
+  textAlign: 'center',
+  '@media (max-width:600px)': {
+    fontSize: '4rem',
+    fontWeight: 600,
+  },
+};
+
+export const h2Styles = {
+  textAlign: 'center',
+  '@media (max-width:600px)': {
+    fontSize: '2rem',
+  },
+};
+
 export const h3Styles = {
   textAlign: 'center',
   '@media (max-width:600px)': {

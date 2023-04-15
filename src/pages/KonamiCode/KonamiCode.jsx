@@ -1,21 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
+import { h1Styles, h2Styles } from '../../mui-customs/custom-styles';
 import './KonamiCode.css';
-
-const h1Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '4rem',
-    fontWeight: 600,
-  },
-};
-
-const h2Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '2rem',
-  },
-};
 
 function KonamiCode() {
   return (

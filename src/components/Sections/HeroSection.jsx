@@ -1,21 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-
-const h1Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '4rem',
-    fontWeight: 600,
-  },
-};
-
-const h2Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '2rem',
-  },
-};
+import { h1Styles, h2Styles } from '../../mui-customs/custom-styles';
 
 function HeroSection() {
   return (
