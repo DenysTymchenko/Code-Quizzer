@@ -26,28 +26,37 @@
   color: var(--secondary-alt);
 }
 
-.create-new-quiz form input[type=number] { 
+.create-new-quiz form input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
-  margin: 0; 
+  margin: 0;
 }
 
 .create-new-quiz form input[type=number]::-webkit-inner-spin-button,
-.create-new-quiz form input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+.create-new-quiz form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .create-new-quiz form .wrapper {
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.create-new-quiz form .question {
+form .question>.wrapper {
+  margin-bottom: 15px;
+}
+
+.create-new-quiz form .add-answer {
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.create-new-quiz form .answer {
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
