@@ -25,7 +25,7 @@ export const SearchBar = styled(TextField)({
 });
 
 export const Input = styled(TextField)({
-  width: '500px',
+  width: '100%',
   '& label': {
     color: 'var(--main-alt)',
   },
