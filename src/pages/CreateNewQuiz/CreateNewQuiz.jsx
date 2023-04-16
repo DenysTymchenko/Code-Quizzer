@@ -1,34 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Typography, Button } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import { h3Styles, formBtnStyles } from '../../mui-customs/custom-styles';
 import { Input } from '../../mui-customs/custom-elements';
-import FormQuestions from '../../components/FormQuestions/FormQuestions';
 import './CreateNewQuiz.css';
+import { quizzes } from '../../api';
 
 function CreateNewQuiz() {
-  const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState([]);
-
-  const addQuestion = () => {
-    const questionsUpdated = [...questions, { question: '', answers }];
-    setQuestions(questionsUpdated);
-  };
-
   const {
     register,
-    // !!!!!!!!!!!!!!!!DELETE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // eslint-disable-next-line no-unused-vars
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
-  } = useForm();
+    reset,
+  } = useForm({
+    mode: 'onBlur',
+  });
 
   const onSubmit = (data) => {
-    console.log(JSON.stringify(data));
+    quizzes.add(data);
+    reset();
   };
-
-  console.log(questions);
 
   return (
     <main className="create-new-quiz mh100vh">
@@ -39,43 +30,60 @@ function CreateNewQuiz() {
         <Input
           label="Title"
           {...register('title', {
-            required: true,
+            required: 'Title must be filled',
+            minLength: {
+              value: 2,
+              message: 'Title must containt atleast 2 symbols',
+            },
           })}
         />
+        {errors?.title && <p>{errors.title.message}</p>}
         <Input
           label="Description"
           {...register('description', {
-            required: true,
+            required: 'Description must be filled',
+            minLength: {
+              value: 7,
+              message: 'Title must containt atleast 7 symbols',
+            },
+            maxLength: {
+              value: 108,
+              message: 'Title must containt maximum of 108 symbols',
+            },
           })}
         />
+        {errors?.description && <p>{errors.description.message}</p>}
         <Input
-          type="number"
-          label="Time (in seconds)"
+          type='number'
+          label='Time (in seconds)'
+          inputProps={{
+            min: 60,
+            valueAsNumber: true,
+          }}
           {...register('time', {
-            required: true,
+            required: 'Time must be filled with number',
+            min: {
+              value: 60,
+              message: 'Time must be greater than or equal to 60 seconds',
+            },
           })}
         />
-        <div className="wrapper">
-          <Typography variant="h4">Questions:</Typography>
-          <Button
-            variant="contained"
-            sx={formBtnStyles}
-            onClick={addQuestion}
-          >
-            <AddIcon />
-          </Button>
-        </div>
-        {questions.map((question, index) => (
-          <FormQuestions
-            key={index}
-            questions={questions}
-            question={question}
-            answers={answers}
-            questionIndex={index}
-            setQuestions={setQuestions}
-            setAnswers={setAnswers}
-          />
-        ))}
+        {errors?.time && <p>{errors.time.message}</p>}
+        <Input
+          label="Image link"
+          {...register('img', {
+            required: 'Image link must be filled',
+          })}
+        />
+        {errors?.img && <p>{errors.img.message}</p>}
+        <Button
+          variant='contained'
+          sx={formBtnStyles}
+          type='submit'
+          disabled={!isValid}
+        >
+          Submit
+        </Button>
       </form>
     </main>
   );
