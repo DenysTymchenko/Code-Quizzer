@@ -12,7 +12,12 @@ import {
 import { btnStyles } from '../../mui-customs/custom-styles';
 import './QuizResultWindow.css';
 
-function QuizResultWindow({ setIsEnded, setIsStarted, timeIsUp }) {
+function QuizResultWindow({
+  setIsEnded,
+  setIsStarted,
+  timeIsUp,
+  setTimeIsUp,
+}) {
   const { score, questions } = useSelector((state) => state.quizReducer);
 
   const crateCongratulationsText = () => {
@@ -25,6 +30,7 @@ function QuizResultWindow({ setIsEnded, setIsStarted, timeIsUp }) {
   const tryAgain = () => {
     setIsStarted(false);
     setIsEnded(false);
+    setTimeIsUp(false);
   };
 
   return (
