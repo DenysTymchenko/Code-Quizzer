@@ -53,6 +53,7 @@ function QuizCard({ quiz }) {
         <Typography
           className='description'
           variant="body2"
+          sx={{ height: '50px' }}
         >
           {quiz.description}
         </Typography>

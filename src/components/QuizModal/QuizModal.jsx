@@ -62,6 +62,7 @@ function QuizModal({
         </div>
         <div className='info'>
           <Typography
+            className='title'
             sx={{ height: 32 }}
             gutterBottom variant='h5'
             component='div'
@@ -69,6 +70,7 @@ function QuizModal({
             {title}
           </Typography>
           <Typography
+            className='description'
             sx={{ height: 50 }}
             variant='body2'
           >

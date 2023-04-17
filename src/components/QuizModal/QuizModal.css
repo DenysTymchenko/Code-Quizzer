@@ -36,6 +36,11 @@
   padding: 10px 5px;
 }
 
+.modal .info .title,
+.modal .info .description {
+  overflow: auto;
+}
+
 .modal > .buttons {
   width: 100%;
   display: flex;
