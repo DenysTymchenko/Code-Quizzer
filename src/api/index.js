@@ -13,6 +13,7 @@ const quizzes = {
     description,
     time,
     img,
+    category: title,
   }),
 };
 

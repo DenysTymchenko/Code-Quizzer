@@ -10,6 +10,7 @@ import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import CreateNewQuiz from './pages/CreateNewQuiz/CreateNewQuiz';
 import KonamiCode from './pages/KonamiCode/KonamiCode';
 import NotFound from './pages/NotFound/NotFound';
+import QuizInProgress from './pages/QuizInProgress/QuizInProgress';
 import { getFavorites } from './store/modules/favorites/reducer';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route index element={<Main />} />
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/quiz/:name" element={<QuizPage />} />
+        <Route path="/quiz/in-progress" element={<QuizInProgress />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/create" element={<CreateNewQuiz />} />
         <Route path="/konami" element={<KonamiCode />} />

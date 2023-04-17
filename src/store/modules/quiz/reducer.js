@@ -8,7 +8,7 @@ const quizSlice = createSlice({
   name: moduleName,
   initialState: {
     quiz: {},
-    quizExists: true,
+    quizExists: false,
     questions: [],
     answers: [],
     time: 0,
@@ -20,7 +20,7 @@ const quizSlice = createSlice({
       state.questions = state.quiz.questions;
     },
     setAnswers(state) {
-      state.answers = state.questions[state.index].answers;
+      state.answers = state.questions[state.index] ? state.questions[state.index].answers : state.questions[0].answers;
     },
     setTime(state) {
       state.time = state.quiz.time;
@@ -40,8 +40,14 @@ const quizSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(thunks.fetchQuiz.fulfilled, (state, { payload }) => {
-      // eslint-disable-next-line no-unused-expressions
-      payload ? state.quiz = payload : state.quizExists = false;
+      if (payload) {
+        state.quiz = payload;
+        state.quizExists = true;
+        state.questions = state.quiz.questions;
+      } else {
+        state.questions = [];
+        state.quizExists = false;
+      }
     });
   },
 });
