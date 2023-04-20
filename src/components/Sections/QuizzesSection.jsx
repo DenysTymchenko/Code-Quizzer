@@ -3,14 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import QuizCard from '../QuizCard/QuizCard';
 import { quizzesThunks } from '../../store/modules/quizzes';
-
-const h3Styles = {
-  textAlign: 'center',
-  marginBottom: 5,
-  '@media (max-width:600px)': {
-    fontSize: '2.5rem',
-  },
-};
+import { h3Styles } from '../../mui-customs/custom-styles';
 
 function QuizzesSection() {
   const { quizzes } = useSelector((state) => state.quizzesReducer);

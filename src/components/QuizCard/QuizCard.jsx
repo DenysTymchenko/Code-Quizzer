@@ -13,15 +13,8 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 import { addToFavorites, removeFromFavorites } from '../../store/modules/favorites/reducer';
 import QuizModal from '../QuizModal/QuizModal';
+import { btnStyles } from '../../mui-customs/custom-styles';
 import './QuizCard.css';
-
-const btnStyles = {
-  color: 'white',
-  borderColor: 'var(--main-alt)',
-  '&:hover': {
-    borderColor: 'var(--main)',
-  },
-};
 
 function QuizCard({ quiz }) {
   const { favorites } = useSelector((state) => state.favoritesReducer);
@@ -60,6 +53,7 @@ function QuizCard({ quiz }) {
         <Typography
           className='description'
           variant="body2"
+          sx={{ height: '50px' }}
         >
           {quiz.description}
         </Typography>

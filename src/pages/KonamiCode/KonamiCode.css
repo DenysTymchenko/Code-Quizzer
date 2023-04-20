@@ -1,0 +1,23 @@
+.konami-code{
+  position: relative;
+  color: var(--secondary-alt);
+}
+
+.konami-code video {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+}
+
+.konami-code .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}

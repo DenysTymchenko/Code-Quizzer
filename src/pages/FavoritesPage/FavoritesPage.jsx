@@ -1,39 +1,10 @@
 import React, { useState } from 'react';
-import { styled, Typography, TextField } from '@mui/material';
+import { Typography } from '@mui/material';
 import './FavoritesPage.css';
 import { useSelector } from 'react-redux';
 import QuizCard from '../../components/QuizCard/QuizCard';
-
-const h3Styles = {
-  textAlign: 'center',
-  '@media (max-width:600px)': {
-    fontSize: '2.5rem',
-  },
-};
-
-const SearchBar = styled(TextField)({
-  width: '500px',
-  '& label.Mui-focused': {
-    color: 'var(--secondary)',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'var(--secondary)',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#var(--main-alt)',
-    },
-    '&:hover fieldset': {
-      borderColor: 'var(--secondary)',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: 'var(--secondary)',
-    },
-  },
-  '@media (max-width:600px)': {
-    width: '300px',
-  },
-});
+import { h3Styles } from '../../mui-customs/custom-styles';
+import { SearchBar } from '../../mui-customs/custom-elements';
 
 function FavoritePage() {
   const { favorites } = useSelector((state) => state.favoritesReducer);
