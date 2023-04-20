@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Code Quizzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Place where you can check your programing skills.
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+**Code Quizzer** is a pet-project created to learn React:  how it works and what it's capable of. It was made within one month and works as basic demonstration of my skills.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://react.dev/)
+- [MUI (Material UI)](https://mui.com/material-ui/getting-started/overview/)
+- [Axios]()
+- [Redux Toolkit](https://axios-http.com/)
+- [React Router](https://reactrouter.com/en/mainhttps://reactrouter.com/en/main)
+- [ESLint](https://eslint.org/)
+- [JSON Server](https://www.npmjs.com/package/json-server)
+- [concurrently](https://www.npmjs.com/package/concurrently)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Easter Eggs
 
-### `npm test`
+I really love finding Easter eggs in anything (videogames, movies, etc.). It's a thing that provides a fun experience and adds soul to a project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+So, I decided to add a few of them to my project as well:
+<details>
+  <summary>The Witcher 3: Wild Hunt</summary>
+  
+  When you happen to reach the 404 page, you will see some atypical text:
+  
+  > You have reached the world's edge. None but devils play past here... Turn back.
 
-### `npm run build`
+  This is the text that players can see in The Witcher 3 game when they reach the end of the map.
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary>Konami code</summary>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  If you press legendary combination of
+  >Up, Up, Down, Down, Left, Right, Left, Right, B, A
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  You'll get... Nothing!
+  Well... At least you'll see a really nice page made especially for those who know about that Easter egg.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
