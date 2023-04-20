@@ -6,6 +6,11 @@
 
 **Code Quizzer** is a pet-project created to learn React:  how it works and what it's capable of. It was made within one month and works as basic demonstration of my skills.
 
+### Here you can: 
+1. Complete quizzes to test your knowledge of different programming languages.
+2. Set quizzes as favorites, so you can always access your favorite ones on a separate page in the future.
+3. Fill in the basic fields to create a base for a new quiz.
+
 ## Technologies
 
 - [React](https://react.dev/)
