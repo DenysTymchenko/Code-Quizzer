@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -29,10 +30,9 @@ function QuizModal({
     time,
   } = quiz;
 
+  // Add/Remove from favorites.
   const dispatch = useDispatch();
-
   function setFavorite() {
-    // eslint-disable-next-line no-unused-expressions
     isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
     setIsFavorite(!isFavorite);
   }

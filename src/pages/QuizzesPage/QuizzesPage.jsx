@@ -1,27 +1,28 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Typography } from '@mui/material';
-import './QuizzesPage.css';
 import QuizCard from '../../components/QuizCard/QuizCard';
 import { quizzesThunks } from '../../store/modules/quizzes';
 import { h3Styles } from '../../mui-customs/custom-styles';
 import { SearchBar } from '../../mui-customs/custom-elements';
+import './QuizzesPage.css';
 
 function QuizzesPage() {
   const { quizzes } = useSelector((state) => state.quizzesReducer);
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
-    (async () => {
-      // eslint-disable-next-line no-unused-expressions
-      query ? await dispatch(quizzesThunks.fetchQuizzesQuery(query)) : await dispatch(quizzesThunks.fetchQuizzes());
-    })();
-  }, [query]);
-
+  // for SearchBar
   const handleQuery = (input) => {
     setQuery(input);
   };
+
+  useEffect(() => {
+    (async () => {
+      query ? await dispatch(quizzesThunks.fetchQuizzesQuery(query)) : await dispatch(quizzesThunks.fetchQuizzes());
+    })();
+  }, [query]);
 
   return (
     <main className='quizzes-page mh100vh'>

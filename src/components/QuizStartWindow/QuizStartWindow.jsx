@@ -15,6 +15,7 @@ import { nullifyScore, nullifyIndex, setTime } from '../../store/modules/quiz/re
 function QuizStartWindow({ setIsStarted }) {
   const { quiz, time, questions } = useSelector((state) => state.quizReducer);
   const dispatch = useDispatch();
+  // we need to reset our score and index to 0, when user dicided to start a new quiz again.
   dispatch(nullifyScore());
   dispatch(nullifyIndex());
 

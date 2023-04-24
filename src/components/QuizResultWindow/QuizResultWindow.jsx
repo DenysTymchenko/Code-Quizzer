@@ -64,6 +64,7 @@ function QuizResultWindow({
         </Button>
       </Container>
 
+      {/* Block, that'll be shown, for a short time, only when user hasn't finished quiz on time */}
       {timeIsUp && (
         <Alert className="alert" severity="error">
           <AlertTitle><strong>Time is up</strong></AlertTitle>

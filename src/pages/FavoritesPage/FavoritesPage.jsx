@@ -9,6 +9,7 @@ import { SearchBar } from '../../mui-customs/custom-elements';
 function FavoritePage() {
   const { favorites } = useSelector((state) => state.favoritesReducer);
 
+  // for a SearchBar
   const [query, setQuery] = useState('');
   const handleQuery = (input) => {
     setQuery(input);

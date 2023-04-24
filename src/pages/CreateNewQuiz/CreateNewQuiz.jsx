@@ -13,12 +13,12 @@ function CreateNewQuiz() {
     handleSubmit,
     reset,
   } = useForm({
-    mode: 'onBlur',
+    mode: 'onBlur', // means that we'll be showing errors messages of inputs, only when focus removed from input.
   });
 
   const onSubmit = (data) => {
-    quizzes.add(data);
-    reset();
+    quizzes.add(data); // On submit adds base for a new quiz (so we could render it's card and modal atleast)
+    reset(); // and resets all form fields.
   };
 
   return (

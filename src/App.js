@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
@@ -14,11 +15,11 @@ import QuizInProgress from './pages/QuizInProgress/QuizInProgress';
 import { getFavorites } from './store/modules/favorites/reducer';
 
 function App() {
+  // setting favorites quizzes on page load.
   const { favorites } = useSelector((state) => state.favoritesReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
     localStorage.favorites
       ? dispatch(getFavorites())
       : localStorage.setItem('favorites', JSON.stringify(favorites));

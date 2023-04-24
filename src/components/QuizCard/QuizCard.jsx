@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,25 +12,27 @@ import {
 } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
+import { btnStyles } from '../../mui-customs/custom-styles';
 import { addToFavorites, removeFromFavorites } from '../../store/modules/favorites/reducer';
 import QuizModal from '../QuizModal/QuizModal';
-import { btnStyles } from '../../mui-customs/custom-styles';
 import './QuizCard.css';
 
 function QuizCard({ quiz }) {
+  // Add/Remove from favorites.
   const { favorites } = useSelector((state) => state.favoritesReducer);
   const dispatch = useDispatch();
+  const [isFavorite, setIsFavorite] = useState(favorites.find((favQuiz) => favQuiz.id === quiz.id));
+  function setFavorite() {
+    isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
+    setIsFavorite(!isFavorite);
+  }
 
+  // Modal
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [isFavorite, setIsFavorite] = useState(favorites.find((favQuiz) => favQuiz.id === quiz.id));
-  function setFavorite() {
-    // eslint-disable-next-line no-unused-expressions
-    isFavorite ? dispatch(removeFromFavorites(quiz)) : dispatch(addToFavorites(quiz));
-    setIsFavorite(!isFavorite);
-  }
+  // Generate quiz URL
   const getQuizPath = () => `/quiz/${quiz.title.replaceAll(' ', '_').toLowerCase()}`;
 
   return (

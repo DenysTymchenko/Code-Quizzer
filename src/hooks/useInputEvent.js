@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// global - refers to the global object in the JavaScript environment in which this code is executed.
+// The code is adding and removing event listeners to the global object,
+// which allows it to capture all keyboard events on the page, where it's used.
 export const useInputEvent = () => {
   const [key, setKey] = useState(null);
 

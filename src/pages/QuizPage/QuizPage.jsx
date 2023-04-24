@@ -12,12 +12,11 @@ import { setAnswers } from '../../store/modules/quiz/reducer';
 function QuizPage() {
   const { name } = useParams();
 
-  // eslint-disable-next-line prefer-const
-  let { questions } = useSelector((state) => state.quizReducer);
+  const { questions } = useSelector((state) => state.quizReducer);
   const { quizzes } = useSelector((state) => state.quizzesReducer);
   const dispatch = useDispatch();
 
-  const [isExists, setIsExists] = useState(false);
+  const [isExists, setIsExists] = useState(false); // for checking if there's object with quizzes questions and answers in db.
   const [isLoaded, setIsLoaded] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
@@ -28,6 +27,7 @@ function QuizPage() {
       try {
         await dispatch(quizzesThunks.fetchQuizzes());
         await dispatch(quizThunks.fetchQuiz(name));
+        // we wouldn't set answers and isExists if smth would go wrong in thinks.
         dispatch(setAnswers());
         setIsExists(true);
       } catch (e) {
@@ -38,6 +38,7 @@ function QuizPage() {
     })();
   }, []);
 
+  // for checking if base of quiz is created.
   const QuizInDb = (quizzes.filter((quiz) => quiz.title.replaceAll(' ', '_').toLowerCase() === name)).length > 0;
 
   return (

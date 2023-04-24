@@ -1,9 +1,10 @@
+/* eslint-disable no-plusplus */
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Paper, Typography } from '@mui/material';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import './QuizHeader.css';
-import { useSelector } from 'react-redux';
 
 function QuizHeader({ setIsEnded, setTimeIsUp }) {
   const { quiz, questions, index } = useSelector((state) => state.quizReducer);
@@ -15,7 +16,6 @@ function QuizHeader({ setIsEnded, setTimeIsUp }) {
     const minutes = Math.floor(time / 60);
     let seconds = time - (minutes * 60);
     seconds = seconds < 10 ? `0${seconds}` : seconds;
-    // eslint-disable-next-line no-plusplus
     time--;
 
     setTimer(`${minutes}:${seconds}`);
@@ -26,9 +26,10 @@ function QuizHeader({ setIsEnded, setTimeIsUp }) {
     }
   };
 
+  // We need to update timer every second, so we'll use useEffect for it.
   useEffect(() => {
     const interval = setInterval(handleTimer, 1000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // we use clearInterval to prevent handleTimer from being called repeatedly after the component unmounts or is re-rendered, which could lead to memory leaks and performance issues.
   }, []);
 
   return (

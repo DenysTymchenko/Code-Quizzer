@@ -15,7 +15,7 @@ function QuizzesSection() {
     })();
   }, []);
 
-  const mainPageQuizzes = quizzes.slice(0, 3);
+  const mainPageQuizzes = quizzes.slice(0, 3); // I want to show only first three quizzes on the Main page.
 
   return (
     <section id='quizzes' className='mh100vh'>

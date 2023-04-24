@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonGroup, Container } from '@mui/material';
@@ -9,13 +10,8 @@ function QuizAnswers({ setIsEnded }) {
   const dispatch = useDispatch();
 
   const acceptAnswer = (answer) => {
-    dispatch(appendIndex());
-
-    if (answer.isCorrect) {
-      dispatch(appendScore());
-    }
-
-    // eslint-disable-next-line no-unused-expressions
+    if (answer.isCorrect) dispatch(appendScore());
+    dispatch(appendIndex()); // we need to update index for showing next question and it's answers, after user clicks on any of the answer buttons.
     index + 1 !== questions.length ? dispatch(setAnswers()) : setIsEnded(true);
   };
 
@@ -31,7 +27,12 @@ function QuizAnswers({ setIsEnded }) {
         variant="contained"
       >
         {answers.map((answer) => (
-          <Button key={answer.answer} onClick={() => acceptAnswer(answer)}>{answer.answer}</Button>
+          <Button
+            key={answer.answer}
+            onClick={() => acceptAnswer(answer)}
+          >
+            {answer.answer}
+          </Button>
         ))}
       </ButtonGroup>
     </Container>
