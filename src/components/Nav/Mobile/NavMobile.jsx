@@ -6,17 +6,8 @@ import {
   MenuItem,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
-import FactCheckIcon from '@mui/icons-material/FactCheck';
-import StarIcon from '@mui/icons-material/Star';
-import CreateIcon from '@mui/icons-material/Create';
 
-function NavMobile() {
-  const pages = ['Home', 'Quizzes', 'Favorites', 'Create'];
-  const links = ['/', '/quizzes', '/favorites', '/create'];
-  // eslint-disable-next-line react/jsx-key
-  const icons = [<HomeIcon />, <FactCheckIcon />, <StarIcon />, <CreateIcon />];
-
+function NavMobile({ pages, links, icons }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

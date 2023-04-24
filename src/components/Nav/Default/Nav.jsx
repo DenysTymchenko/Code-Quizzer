@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import '../Nav.css';
 import PagesList from './PagesList';
 
-function Nav() {
+function Nav({ pages, links, icons }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,7 +30,11 @@ function Nav() {
             color: 'var(--secondary-alt)',
           }}
         >
-            <PagesList />
+          <PagesList
+            pages={pages}
+            links={links}
+            icons={icons}
+          />
         </Box>
       </Drawer>
     </nav>
